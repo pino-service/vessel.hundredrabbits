@@ -1,0 +1,33 @@
+* { padding:0px; margin:0px;}
+
+body { background:#000; color:#fff; font-family: "Helvetica Neue", Helvetica, Arial}
+
+timeline { display:block; width:0px; height: calc(100vh - 150px); background:#333; margin:30px auto 60px auto; position: fixed; left:50%; border-right:1px solid #333; z-index:100;}
+timeline event { display: block;width: 20px;height: 21px;position: absolute;margin-left: -10px;margin-top: -10px; z-index:100; background:#000;}
+timeline event svg.icon { width:20px; height:20px; position: absolute;}
+timeline event svg.icon * { stroke:#fff; stroke-width:1px; fill:none;}
+timeline event span.title { display: block; line-height: 20px; position: absolute; left:60px; font-size:14px; top: 0px; width:300px; text-transform: capitalize;}
+timeline event span.details { display: block; line-height: 20px; position: absolute; left:60px; font-size:14px; top: 20px; font-size:12px; color:#555; width:300px;}
+timeline event line { display: block;background: #fff;height: 1px;position: absolute;left: 15px;top: 10px;width: 30px;}
+timeline #today { background:red;}
+
+timeline event.milestone { }
+timeline event.month { height: 1px;background:#111;width: 100vw; margin-left: -50vw;margin-top: 0.5px; z-index:1;}
+timeline event.month span { background: #000;font-size: 10px;display: block;position: absolute;top: -15px;text-transform: uppercase;padding: 10px;color: #333;}
+timeline event.today { z-index: 10}
+timeline event.today span { text-transform: uppercase;font-size: 11px;color: #333;background: #000;left: -40px;text-align: center;z-index: 200;width: 100px; line-height: 30px;top: -5px;}
+timeline event.event span.title { font-size: 12px; font-weight: bold}
+
+timeline marker { display: block;width: 20px;height: 20px;position: absolute;margin-left: -10px;margin-top: -10px;}
+timeline marker svg.icon { stroke-width:1px; stroke:#333;}
+timeline marker#marker_top { top:0px;}
+timeline marker#marker_bottom { top:100%;}
+
+footer { position:fixed; bottom:0px; z-index:900; }
+footer svg.logo { width:56px; height:56px; margin:30px 30px; display:block;}
+footer hr { position: relative; bottom:15px; background:#222; height:0px; width:calc(100vw - 60px); margin-left:30px; border:0px; border-top:1px dotted #111;}
+footer p { position: absolute;left: 106px;top: 70px; font-size:12px; font-weight: bold;}
+
+body.mobile timeline { left: 57px;}
+body.mobile timeline event.month { left: -57px;margin-left: 0px;} 
+body.mobile timeline event line { width:20px;}
