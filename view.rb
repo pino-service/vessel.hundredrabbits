@@ -9,7 +9,7 @@ require "mysql"
 require 'date'
 
 require_relative "object.event.rb"
-require_relative "database.rb"
+require_relative "../../tools/database.rb"
 
 $oscean = Oscean.new()
 $oscean.connect
@@ -20,9 +20,12 @@ events = events.sort_by { |k| k.time }
 
 # Events
 
+count = 0
 events_html = ""
 events.each do |event|
+	event.addClass((count % 2 == 0 ? "even" : "odd"))
 	events_html += event.template
+	count += 1
 end
 
 # Extras
@@ -72,8 +75,8 @@ puts "
 <html>
 <head>
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js' ></script>
-	<link rel='stylesheet' type='text/css' href='style.main.css' />
-	<script src='script.main.js'></script>
+	<link rel='stylesheet' type='text/css' href='inc/style.main.css' />
+	<script src='inc/script.main.js'></script>
 </head>
 <body>
 	<timeline from='#{events.first.time}' to='#{events.last.time}'>

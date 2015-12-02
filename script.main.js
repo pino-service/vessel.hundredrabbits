@@ -8,7 +8,7 @@ $(document).ready(function()
 	timeline = $("timeline");
 	timeline_from = $("timeline").attr("from");
 	timeline_to   = $("timeline").attr("to");
-	$("body").height("200vh");
+	$("body").height("400vh");
 	updateTimeline();
 	updateScreenForMobile();
 });
@@ -43,7 +43,7 @@ function updateTimeline()
 		var test2 = timeline_to - timeline_from
 		var percent = 100-((test1/test2)*100)
 		var verticalPosition = percent - ($(document).scrollTop()/$(document).height());
-		verticalPosition = (verticalPosition * 2) - (scrollPercent * 100);
+		verticalPosition = (verticalPosition * 3) - (scrollPercent * 200);
 
 		if (verticalPosition < 0) { $(this).css("display","none"); return }
 		if (verticalPosition > 100) { $(this).css("display","none"); return }

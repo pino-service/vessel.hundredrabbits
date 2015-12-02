@@ -6,17 +6,30 @@ timeline { display:block; width:0px; height: calc(100vh - 150px); background:#33
 timeline event { display: block;width: 20px;height: 21px;position: absolute;margin-left: -10px;margin-top: -10px; z-index:100; background:#000;}
 timeline event svg.icon { width:20px; height:20px; position: absolute;}
 timeline event svg.icon * { stroke:#fff; stroke-width:1px; fill:none;}
-timeline event span.title { display: block; line-height: 20px; position: absolute; left:60px; font-size:14px; top: 0px; width:300px; text-transform: capitalize;}
-timeline event span.details { display: block; line-height: 20px; position: absolute; left:60px; font-size:14px; top: 20px; font-size:12px; color:#555; width:300px;}
+timeline event p { display: inline-block; line-height: 20px; position: absolute; left:60px; font-size:14px; top: 0px; width:300px; text-transform: capitalize;}
+timeline event span.title { font-size: 12px; font-weight: bold; margin-right:15px; color:#777;}
+timeline event span.details { font-size:11px; color:#555; }
+timeline event span.offset { font-size:11px; color:#555; }
 timeline event line { display: block;background: #fff;height: 1px;position: absolute;left: 15px;top: 10px;width: 30px;}
 timeline #today { background:red;}
 
-timeline event.milestone { }
+timeline event.odd p { left:-340px; text-align: right}
+timeline event.odd line { left:-25px !important}
+
+timeline event.milestone span.details { position: absolute;left: 0px;top: 30px;width:200px}
+
 timeline event.month { height: 1px;background:#111;width: 100vw; margin-left: -50vw;margin-top: 0.5px; z-index:1;}
 timeline event.month span { background: #000;font-size: 10px;display: block;position: absolute;top: -15px;text-transform: uppercase;padding: 10px;color: #333;}
 timeline event.today { z-index: 10}
-timeline event.today span { text-transform: uppercase;font-size: 11px;color: #333;background: #000;left: -40px;text-align: center;z-index: 200;width: 100px; line-height: 30px;top: -5px;}
-timeline event.event span.title { font-size: 12px; font-weight: bold}
+timeline event.today p { text-transform: uppercase;font-size: 11px;color: #333;background: #000;left: -40px;text-align: center;z-index: 200;width: 100px; line-height: 30px;top: -5px;}
+timeline event.today span.title { margin-right:0px;}
+timeline event.today .offset { display: none}
+timeline event.diary { background:none;}
+timeline event.diary svg * { stroke-width:0px; fill:#333;}
+timeline event.diary line { left:10px; width:35px; background: #333}
+timeline event a { color:#fff; text-decoration: none}
+timeline event a.paid:after { content:"*"; color:red; }
+timeline event a:hover { text-decoration: underline; cursor: pointer }
 
 timeline marker { display: block;width: 20px;height: 20px;position: absolute;margin-left: -10px;margin-top: -10px;}
 timeline marker svg.icon { stroke-width:1px; stroke:#333;}
@@ -30,4 +43,6 @@ footer p { position: absolute;left: 106px;top: 70px; font-size:12px; font-weight
 
 body.mobile timeline { left: 57px;}
 body.mobile timeline event.month { left: -57px;margin-left: 0px;} 
-body.mobile timeline event line { width:20px;}
+body.mobile timeline event line { left:15px !important; width:20px;}
+body.mobile timeline event.odd p { left:60px; text-align: left}
+body.mobile timeline event .details { display: none}

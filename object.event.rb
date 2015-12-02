@@ -6,6 +6,10 @@ class Event
     @title = row[2]
     @details = row[3]
     @url = row[4]
+    @isPaid = row[5].to_i
+    @icon_align = 10.5
+
+    @extraClasses = ""
   end
 
   def date
@@ -17,7 +21,8 @@ class Event
   end
 
   def title
-    return @title
+
+    return url ? "<a href='#{@url}' target='_blank' class='#{((isPaid) ? "paid" : "")}'>#{@title}</a>" : "#{@title}"
   end
 
   def details
@@ -25,7 +30,13 @@ class Event
   end
 
   def url
+    if "#{@url}".strip == "" then return end
     return @url
+  end
+
+  def isPaid
+    if @isPaid > 0 then return true end
+    return
   end
 
   def year
@@ -65,29 +76,84 @@ class Event
     return timeDiff.to_s+" days ago"
   end
 
-  def icon
-    if type == "milestone" then return icon_milestone end
-    if type == "event" then return icon_event end
-    if type == "today" then return "" end
-    return "<svg class='icon'><circle cx='10.5' cy='10.5' r='4' fill='#000'></circle></svg>"
+  def imageExists date
+    imageName = "#{date}".gsub("-","").to_i
+    if imageName < 1 then return end
+    if File.exist?("img/#{imageName}.jpg") then return true end
+    return
   end
 
-  def icon_milestone
-    offset = 10.5
-    return "<svg class='icon'><circle cx='#{offset}' cy='#{offset}' r='2'></circle><circle cx='#{offset}' cy='#{offset}' r='5'></circle></svg>"
-  end
-
-  def icon_event
-    offset = 10.5
-    return "<svg class='icon'><line x1='#{offset}' y1='#{offset + 5}' x2='#{offset + 5}' y2='#{offset}'/><line x1='#{offset}' y1='#{offset - 5}' x2='#{offset + 5}' y2='#{offset}'/><line x1='#{offset}' y1='#{offset + 5}' x2='#{offset - 5}' y2='#{offset}'/><line x1='#{offset}' y1='#{offset - 5}' x2='#{offset - 5}' y2='#{offset}'/></svg>"
+  def addClass className
+    @extraClasses += "#{className} "
   end
 
   def template
+    if type == "milestone" then return template_milestone end
+    if type == "event" then return template_event end
+    if type == "diary" then return template_diary end
+    if type == "release" then return template_release end
+    return template_missing
+  end
+
+  def template_missing
     return "
-    <event time='#{time}' class='#{type}'>
-      <span class='title'>#{title}</span>
-      <span class='details'>#{details}</span>
-      <span class='icon'>#{icon}</span>
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <p>
+        <span class='title'>#{title}</span>
+        <span class='details'>#{details}</span>
+        <span class='offset'>#{offset}</span>
+      </p>
+      <svg class='icon'></svg>
+      <line></line>
+    </event>"
+  end
+
+  def template_release
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <p>
+        <span class='title'>Release: #{title}</span>
+        <span class='details'>#{details}</span>
+        <span class='offset'>#{offset}</span>
+      </p>
+      <svg class='icon'><circle cx='10.5' cy='10.5' r='5' fill='#000'></circle></svg>
+      <line></line>
+    </event>"
+  end
+
+  def template_event
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <p>
+        <span class='title'>#{title}</span>
+        <span class='offset'>#{offset}</span>
+      </p>
+      <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 5}' x2='#{@icon_align + 5}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 5}' x2='#{@icon_align + 5}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 5}' x2='#{@icon_align - 5}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 5}' x2='#{@icon_align - 5}' y2='#{@icon_align}'/></svg>
+      <line></line>
+    </event>"
+  end
+
+  def template_milestone
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <p>
+        <span class='title'>Milestone: #{title}</span>
+        <span class='details'>#{details}</span>
+        <span class='offset'>#{offset}</span>
+      </p>
+      <svg class='icon'><circle cx='#{@icon_align}' cy='#{@icon_align}' r='2' style='stroke:red'></circle><circle cx='#{@icon_align}' cy='#{@icon_align}' r='5'></circle></svg>
+      <line></line>
+    </event>"
+  end
+
+  def template_diary
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <p>
+        <span class='title'>#{title}</span>
+        <span class='offset'>#{offset}</span>
+      </p>
+      <svg class='icon'><circle cx='#{@icon_align}' cy='#{@icon_align}' r='3'></circle></svg>
       <line></line>
     </event>"
   end
