@@ -14,9 +14,7 @@ require_relative "../../tools/database.rb"
 $oscean = Oscean.new()
 $oscean.connect
 
-events = $oscean.fetchEvents
-
-events = events.sort_by { |k| k.time }
+events = $oscean.fetchEvents.sort_by { |k| k.time }
 
 # Events
 
@@ -82,10 +80,21 @@ puts "
 	<timeline from='#{events.first.time}' to='#{events.last.time}'>
 		#{events_html}
 	</timeline>
+	<content>
+		<img src='img/about.jpg'/>
+		<div>
+			<h1>Hundredrabbits</h1>
+			<h2>We are a team of game designers documenting our lives living aboard a sailboat on the Pacific Ocean. </h2>
+			<p>Support us on <a href='https://patreon.com/100' target='_blank'>Patreon</a>, through which we release weekly updates and give away stickers and download codes.</p>
+			
+			<a href='https://www.patreon.com/100' class='icon patreon' target='_blank'></a>
+			<a href='https://github.com/hundredrabbits' class='icon github' target='_blank'></a>
+			<a href='https://twitter.com/hundredrabbits' class='icon twitter' target='_blank'></a>
+		</div>
+	</content>
 	<footer>
 		#{logo}
 		<p><span>hundredrabbits</span></p>
-		<hr/>
 	</footer>
 </body>
 </html>
