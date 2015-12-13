@@ -17,6 +17,7 @@ class Graph
 			memory[i] = {}
 			memory[i]["patrons"] = 0
 			memory[i]["pledged"] = 0
+			memory[i]["average"] = 0
 			i += 1
 		end
 		return memory
@@ -56,12 +57,16 @@ class Graph
 
 			patrons_count = log["patrons"].to_f
 			patrons_pledged = log["pledged"].to_f
+			patrons_average = (patrons_pledged/patrons_count) * 40
 
 			if segments[progressPrev] then segments[progressPrev]["patrons"] += patrons_count * distributePrev end
 			if segments[progressNext] then segments[progressNext]["patrons"] += patrons_count * distributeNext end
 
 			if segments[progressPrev] then segments[progressPrev]["pledged"] += patrons_pledged * distributePrev end
 			if segments[progressNext] then segments[progressNext]["pledged"] += patrons_pledged * distributeNext end
+
+			if segments[progressPrev] then segments[progressPrev]["average"] += patrons_average * distributePrev end
+			if segments[progressNext] then segments[progressNext]["average"] += patrons_average * distributeNext end
 		end
 		
 		return segments
@@ -72,7 +77,6 @@ class Graph
 
 		highest = 1
 		@segments.each do |values|
-			if values["patrons"] > highest then highest = values["patrons"]end
 			if values["pledged"] > highest then highest = values["pledged"]end
 		end
 		return highest
@@ -90,6 +94,7 @@ class Graph
 
 		linePatrons_html = ""
 		linePledged_html = ""
+		lineAverage_html = ""
 
 		count = 0
 		@segments.reverse.each do |values|
@@ -99,11 +104,15 @@ class Graph
 			value = height - (values["pledged"]/highestValue * height)
 			linePledged_html += "#{(count * lineWidth + (segmentWidth))},#{(value).to_i} "
 			linePledged_html += "#{(count * lineWidth + (segmentWidth * 3))},#{(value).to_i} "
+			value = height - (values["average"]/highestValue * height)
+			lineAverage_html += "#{(count * lineWidth + (segmentWidth))},#{(value).to_i} "
+			lineAverage_html += "#{(count * lineWidth + (segmentWidth * 3))},#{(value).to_i} "
 			count += 1
 		end
 
 		# Lines
 
+		html += "<polyline points='#{lineAverage_html}' style='fill:none;stroke:#cccccc;stroke-width:2' stroke-dasharray='2,4' />"
 		html += "<polyline points='#{linePledged_html}' style='fill:none;stroke:#76dbe1;stroke-width:2' />"
 		html += "<polyline points='#{linePatrons_html}' style='fill:none;stroke:#99b0b1;stroke-width:2' />"
 

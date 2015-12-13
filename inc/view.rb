@@ -89,7 +89,7 @@ puts "
 			<h1>Hundredrabbits</h1>
 			<h2>We are a team of game designers documenting our lives living aboard a sailboat on the Pacific Ocean. </h2>
 			#{Graph.new(progress).draw}
-			<p>We have currently #{progress.first['patrons']} patrons with a monthly pledge of #{progress.first['pledged']}$. Support us on <a href='https://patreon.com/100' target='_blank'>Patreon</a>, through which we release weekly updates and give away stickers and download codes.</p>
+			<p>We have #{progress.first['patrons']} patrons with an average monthly pledge of #{((progress.first['pledged']/progress.first['patrons'].to_f)*100).to_i.to_f/100}$, for a total of #{progress.first['pledged']}$. Support us on <a href='https://patreon.com/100' target='_blank'>Patreon</a>, through which we release weekly updates and give away stickers and download codes.</p>
 			
 			<a href='https://www.patreon.com/100' class='icon patreon' target='_blank'></a>
 			<a href='https://github.com/hundredrabbits' class='icon github' target='_blank'></a>
@@ -109,4 +109,6 @@ rescue Exception
 	error = $@
 	errorCleaned = error.to_s.gsub(", ","<br />").gsub("`","<b>").gsub("'","</b>").gsub("\"","").gsub("/var/www/wiki.xxiivv/public_html/","")
 	errorCleaned = errorCleaned.gsub("[","\n").gsub("]","")
-	puts "<pre><b>Error</b>     "+$!.to_s.gsub("`","<b>").gsub("'","</b>")+"
+	puts "<pre><b>Error</b>     "+$!.to_s.gsub("`","<b>").gsub("'","</b>")+"<br/><b>Location</b>  "+errorCleaned+"<br /><b>Report</b>    Please, report this error to <a href='https://twitter.com/aliceffekt'>@aliceffekt</a><br /><br />CURRENTLY UPDATING XXIIVV, COME BACK SOON</pre>"
+
+end
