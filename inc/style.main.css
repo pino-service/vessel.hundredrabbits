@@ -49,6 +49,11 @@ content div a.github { background-image: url('http://100r.co/img/icon.github.png
 content div a.patreon { background-image: url('http://100r.co/img/icon.patreon.png'); }
 content div a.twitter { background-image: url('http://100r.co/img/icon.twitter.png'); }
 
+graph { position:relative; display: block;margin-bottom: 30px}
+graph svg { margin: 0px; display:block; margin-left:-7px;}
+graph span { display: block; color:#aaa; font-size: 11px; text-transform: capitalize}
+graph line { border-top: 1px solid #72dec2;width: 15px;display: inline-block;margin-right:7px;top:-3px;position:relative}
+
 footer { position: fixed;bottom: 0px;z-index: 900;background: #000;width: 100vw }
 footer svg.logo { width:56px; height:56px; margin:30px 30px; display:block;}
 footer hr { position: relative; bottom:15px; background:#222; height:0px; width:calc(100vw - 60px); margin-left:30px; border:0px; border-top:1px dotted #111;}
