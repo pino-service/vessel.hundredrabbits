@@ -1,6 +1,6 @@
 * { padding:0px; margin:0px;}
 
-body { background:#000; color:#fff; font-family: "Helvetica Neue", Helvetica, Arial}
+body { background:#000; color:#fff; font-family: "Helvetica Neue", Helvetica, Arial; overflow-x: hidden;}
 
 timeline { display:block; width:0px; height: calc(100vh - 150px); background:#333; margin:30px auto 60px auto; position: fixed; left:50%; border-right:1px solid #333; z-index:100;}
 timeline event { display: block;width: 20px;height: 21px;position: absolute;margin-left: -10px;margin-top: -10px; z-index:100; background:#000;}
@@ -30,29 +30,16 @@ timeline event.diary line { left:10px; width:35px; background: #333}
 timeline event a { color:#fff; text-decoration: none}
 timeline event a.paid:after { content:"*"; color:red; }
 timeline event a:hover { text-decoration: underline; cursor: pointer }
+timeline event.expense .details { display:inline-block !important}
+timeline event.expense line { height:0px;border-top:1px dotted #333;background:#000}
+timeline event.expense .spending { color:red;}
+timeline event.expense .gain { color:#a4fff7;}
+timeline event.expense .gain:before { content:"+"; }
 
 timeline marker { display: block;width: 20px;height: 20px;position: absolute;margin-left: -10px;margin-top: -10px;}
 timeline marker svg.icon { stroke-width:1px; stroke:#333;}
 timeline marker#marker_top { top:0px;}
 timeline marker#marker_bottom { top:100%;}
-
-content { display: block;background: #efefef;position: absolute;top: 400vh;width: 100vw;z-index: 100; color:#111;}
-content img { width:100%;display:block; margin:0px auto; }
-content div { margin:60px auto 190px auto; max-width: 460px; padding:0px 30px;}
-content div h1 { font-size:35px; margin-bottom: 15px; }
-content div h2 { font-size: 20px;margin-bottom: 15px;line-height: 30px; font-weight: normal }
-content div h2:before { position: absolute;margin: 0px 0 0 -30px;vertical-align: middle;display: inline-block;width: 4px;height: 4px;content: "\2014";color: #000;font-size: 20px}
-content div p { font-size:15px; line-height:20px; margin-bottom: 30px}
-content div p a { font-weight: bold; color:#000; text-decoration: none}
-content div a.icon { display:inline-block; width:30px; height:30px; background-size:cover;}
-content div a.github { background-image: url('http://100r.co/img/icon.github.png'); }
-content div a.patreon { background-image: url('http://100r.co/img/icon.patreon.png'); }
-content div a.twitter { background-image: url('http://100r.co/img/icon.twitter.png'); }
-
-graph { position:relative; display: block;margin-bottom: 30px}
-graph svg { margin: 0px; display:block; margin-left:-7px;}
-graph span { display: block; color:#aaa; font-size: 11px; text-transform: capitalize}
-graph line { border-top: 1px solid #72dec2;width: 15px;display: inline-block;margin-right:7px;top:-3px;position:relative}
 
 footer { position: fixed;bottom: 0px;z-index: 900;background: #000;width: 100vw }
 footer svg.logo { width:56px; height:56px; margin:30px 30px; display:block;}

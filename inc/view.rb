@@ -16,7 +16,6 @@ $oscean = Oscean.new()
 $oscean.connect
 
 progress = $oscean.fetchProgress
-
 events = $oscean.fetchEvents.sort_by { |k| k.time }
 
 # Events
@@ -57,6 +56,13 @@ end
 
 events_html += Event.new(["#{Time.now.year}-#{Time.now.month}-#{Time.now.day}","today","Today",""]).template
 
+# Patreon expenses gain
+
+progress.each do |update|
+	if update["date"].to_s[-2,2] != "01" then next end
+	events_html += Event.new([update["date"],"expense","Patreon",update["pledged"].to_s+".00"]).template
+end
+
 # Logo
 
 logo = ""
@@ -83,19 +89,6 @@ puts "
 	<timeline from='#{events.first.time}' to='#{events.last.time}'>
 		#{events_html}
 	</timeline>
-	<content>
-		<img src='img/about.jpg'/>
-		<div>
-			<h1>Hundredrabbits</h1>
-			<h2>We are a team of game designers documenting our lives living aboard a sailboat on the Pacific Ocean. </h2>
-			#{Graph.new(progress).draw}
-			<p>We have #{progress.first['patrons']} patrons with an average monthly pledge of #{((progress.first['pledged']/progress.first['patrons'].to_f)*100).to_i.to_f/100}$, for a total of #{progress.first['pledged']}$. Support us on <a href='https://patreon.com/100' target='_blank'>Patreon</a>, through which we release weekly updates and give away stickers and download codes.</p>
-			
-			<a href='https://www.patreon.com/100' class='icon patreon' target='_blank'></a>
-			<a href='https://github.com/hundredrabbits' class='icon github' target='_blank'></a>
-			<a href='https://twitter.com/hundredrabbits' class='icon twitter' target='_blank'></a>
-		</div>
-	</content>
 	<footer>
 		#{logo}
 		<p><span>hundredrabbits</span></p>

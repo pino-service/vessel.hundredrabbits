@@ -21,7 +21,6 @@ class Event
   end
 
   def title
-
     return url ? "<a href='#{@url}' target='_blank' class='#{((isPaid) ? "paid" : "")}'>#{@title}</a>" : "#{@title}"
   end
 
@@ -92,6 +91,7 @@ class Event
     if type == "event" then return template_event end
     if type == "diary" then return template_diary end
     if type == "release" then return template_release end
+    if type == "expense" then return template_expense end
     return template_missing
   end
 
@@ -154,6 +154,18 @@ class Event
         <span class='offset'>#{offset}</span>
       </p>
       <svg class='icon'><circle cx='#{@icon_align}' cy='#{@icon_align}' r='3'></circle></svg>
+      <line></line>
+    </event>"
+  end
+
+  def template_expense
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <p>
+        <span class='title'>#{title}</span>
+        <span class='details #{(details.to_i > 0 ? "gain" : "spending")}'>#{details}$</span>
+      </p>
+      <svg class='icon'><circle cx='#{@icon_align}' cy='#{@icon_align}' r='3' style='stroke:red'></circle></svg>
       <line></line>
     </event>"
   end

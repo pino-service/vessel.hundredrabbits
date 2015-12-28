@@ -120,7 +120,7 @@ class Graph
 
 		markers = ""
 		markers += "<span style='position:absolute; top:15px;left:0px;'>#{offset(@logs.last['elapsed'])}</span>"
-		markers += "<span style='position:absolute; top:15px;right:15px; text-align:right;'>#{offset(@logs.first['elapsed'])}</span>"
+		# markers += "<span style='position:absolute; top:15px;right:15px; text-align:right;'>#{offset(@logs.first['elapsed'])}</span>"
 
 		return "<graph><svg style='width:#{width}px; height:#{height}px;'>"+html+"<svg>#{markers}</graph>"
 
