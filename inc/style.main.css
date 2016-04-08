@@ -1,53 +1,95 @@
-* { padding:0px; margin:0px;}
+*           { margin:0;padding:0;border:0;outline:0;text-decoration:none;font-weight:inherit;font-style:inherit;color:inherit;font-size:100%;font-family:inherit;vertical-align:baseline;list-style:none;border-collapse:separate;border-spacing:0; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 
-body { background:#000; color:#fff; font-family: "Helvetica Neue", Helvetica, Arial; overflow-x: hidden;}
+@font-face {
+    font-family: 'alte_haas_groteskbold';
+    src: url('font/altehaasgroteskbold-webfont.eot');
+    src: url('font/altehaasgroteskbold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/altehaasgroteskbold-webfont.woff2') format('woff2'),
+         url('font/altehaasgroteskbold-webfont.woff') format('woff'),
+         url('font/altehaasgroteskbold-webfont.ttf') format('truetype'),
+         url('font/altehaasgroteskbold-webfont.svg#alte_haas_groteskbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-timeline { display:block; width:0px; height: calc(100vh - 150px); background:#333; margin:30px auto 60px auto; position: fixed; left:50%; border-right:1px solid #333; z-index:100;}
-timeline event { display: block;width: 20px;height: 21px;position: absolute;margin-left: -10px;margin-top: -10px; z-index:100; background:#000;}
-timeline event svg.icon { width:20px; height:20px; position: absolute;}
-timeline event svg.icon * { stroke:#fff; stroke-width:1px; fill:none;}
-timeline event p { display: inline-block; line-height: 20px; position: absolute; left:60px; font-size:14px; top: 0px; width:300px; text-transform: capitalize;}
-timeline event span.title { font-size: 12px; font-weight: bold; margin-right:15px; color:#777;}
-timeline event span.details { font-size:11px; color:#555; }
-timeline event span.offset { font-size:11px; color:#555; }
-timeline event line { display: block;background: #fff;height: 1px;position: absolute;left: 15px;top: 10px;width: 30px;}
-timeline #today { background:red;}
+@font-face {
+    font-family: 'alte_haas_groteskregular';
+    src: url('font/altehaasgroteskregular-webfont.eot');
+    src: url('font/altehaasgroteskregular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/altehaasgroteskregular-webfont.woff2') format('woff2'),
+         url('font/altehaasgroteskregular-webfont.woff') format('woff'),
+         url('font/altehaasgroteskregular-webfont.ttf') format('truetype'),
+         url('font/altehaasgroteskregular-webfont.svg#alte_haas_groteskregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 
-timeline event.odd p { left:-340px; text-align: right}
-timeline event.odd line { left:-25px !important}
+body { background:#000; color:#fff; font-family: "Alte Haas Grotesk", "Helvetica Neue", Helvetica, Arial;  overflow-x: hidden;}
 
-timeline event.milestone span.details { position: absolute;left: 0px;top: 30px;width:200px}
+c { display: block }
+c h1 { display: block; font-size:30px; font-weight: bold; text-align: center; color:#222; margin-bottom: 15px}
+c h1 small { font-weight: noral; font-size:12px; display:block; }
+c h2 { display: block; font-size:30px; font-weight: bold; text-align: center; color:#222; margin-bottom: 15px}
+c h2 small {  }
+c p { display: block;max-width: 500px;color: #999;font-size: 23px;margin: 0px auto 30px auto;line-height: 32px;}
+c p.main { font-weight: bold; margin-bottom: 30px;}
+c img { max-width: 100vw; display: block }
+c img.main { margin-bottom: 30px }
+c b { font-weight: bold }
 
-timeline event.month { height: 1px;background:#111;width: 100vw; margin-left: -50vw;margin-top: 0.5px; z-index:1;}
-timeline event.month span { background: #000;font-size: 10px;display: block;position: absolute;top: -15px;text-transform: uppercase;padding: 10px;color: #333;}
-timeline event.today { z-index: 10}
-timeline event.today p { text-transform: uppercase;font-size: 11px;color: #333;background: #000;left: -40px;text-align: center;z-index: 200;width: 100px; line-height: 30px;top: -5px;}
-timeline event.today span.title { margin-right:0px;}
-timeline event.today .offset { display: none}
-timeline event.diary { background:none;}
-timeline event.diary svg * { stroke-width:0px; fill:#333;}
-timeline event.diary line { left:10px; width:35px; background: #333}
-timeline event a { color:#fff; text-decoration: none}
-timeline event a.paid:after { content:"*"; color:red; }
-timeline event a:hover { text-decoration: underline; cursor: pointer }
-timeline event.expense .details { display:inline-block !important}
-timeline event.expense line { height:0px;border-top:1px dotted #333;background:#000}
-timeline event.expense .spending { color:red;}
-timeline event.expense .gain { color:#a4fff7;}
-timeline event.expense .gain:before { content:"+"; }
+c h { display: inline-block;vertical-align: top; width:calc(50% - 5px)}
+c hr { clear:both; }
+c w { max-width: 500px; display: block; margin:0px auto; }
 
-timeline marker { display: block;width: 20px;height: 20px;position: absolute;margin-left: -10px;margin-top: -10px;}
-timeline marker svg.icon { stroke-width:1px; stroke:#333;}
-timeline marker#marker_top { top:0px;}
-timeline marker#marker_bottom { top:100%;}
+c.header {}
+c.header svg { display: block; margin:100px auto; width: 88px; height:88px;  }
 
-footer { position: fixed;bottom: 0px;z-index: 900;background: #000;width: 100vw }
-footer svg.logo { width:56px; height:56px; margin:30px 30px; display:block;}
-footer hr { position: relative; bottom:15px; background:#222; height:0px; width:calc(100vw - 60px); margin-left:30px; border:0px; border-top:1px dotted #111;}
-footer p { position: absolute;left: 106px;top: 70px; font-size:12px; font-weight: bold;}
+c.introduction { padding:70px; background:#f5f5f5; }
+c.introduction img { max-width: 220px; margin:0px auto 15px;}
+c.introduction p {  }
+c.introduction ul { margin:0px auto; color: #222; font-size:13px; line-height: 20px}
+c.introduction ul li { vertical-align: top }
+c.introduction ul li b { display: inline-block;width: calc(50% - 15px);font-weight: bold;text-align: right;padding-right: 15px;}
+c.introduction ul li span { display: inline-block; width:calc(50% - 15px); text-align: left; padding-left:15px; }
+c.introduction a { text-decoration: underline; }
 
-body.mobile timeline { left: 57px;}
-body.mobile timeline event.month { left: -57px;margin-left: 0px;} 
-body.mobile timeline event line { left:15px !important; width:20px;}
-body.mobile timeline event.odd p { left:60px; text-align: left}
-body.mobile timeline event .details { display: none}
+c.timeline { margin:30px 0px; position: relative;overflow: hidden}
+c.timeline event { display: block; font-size:12px; position:relative; left:calc(50% - 10px); line-height: 30px; margin-bottom: 20px}
+c.timeline event svg { width: 20px;height: 20px;display: inline-block;position: absolute;left: 0px;top: 5px;z-index: 900}
+c.timeline event svg line { stroke:#fff; }
+c.timeline event .title { font-weight: bold; padding-left:75px; padding-right:15px;}
+c.timeline event .details { font-weight: normal }
+c.timeline event .offset { color:#999; }
+c.timeline event line.spacer { display: block;height: 1px;background: #333;width: 40px;position: absolute;top: 15px;left: 14px; z-index: 90;}
+c.timeline center { background: #333;width: 1px;position: absolute;left: 50%;top: 0px;height: 90000px }
+
+c.timeline event.odd { left:0px; width:calc(50% + 10px); text-align: right }
+c.timeline event.odd .title { float:right; padding-left:15px; padding-right:75px; }
+c.timeline event.odd svg { right:0px; left:initial; }
+c.timeline event.odd line.spacer { left:initial; right:12px; }
+
+c.timeline event.sail .title { font-weight: normal; font-style: italic; color:#999; }
+c.timeline event.expense .title { font-weight: normal; color:#999; }
+c.timeline event.expense line.spacer { background:black; border-top:1px dotted #ff0000; }
+c.timeline event.expense.spending .details { color:#ff0000; }
+c.timeline event.expense.spending svg circle { stroke:#ff0000; }
+c.timeline event.expense.gain .details { color:#a5eadc; }
+c.timeline event.expense.gain line.spacer { background:black; border-top:1px dotted #a5eadc; }
+c.timeline event.expense.gain svg circle { stroke:#a5eadc; fill: #a5eadc }
+c.timeline event.event line.spacer { background:white; }
+c.timeline event.sail line.spacer { display: none }
+c.timeline event.patreon { background: black;width: 100%;left: 0px;text-align: center;z-index: 9000 }
+c.timeline event.patreon .title { padding:0px; float:none; }
+c.timeline event.video .title { text-decoration: underline; }
+c.timeline event.first { background: black;width: 100%;left: 0px;text-align: center;z-index: 9000; margin-bottom: 0px }
+c.timeline event.first .title { padding:0px; float:none; }
+
+c.status { background: #000;padding: 30px 0px;}
+c.status h2 { width:50%; display: inline-block; color:white; float:left;}
+c.status h2 small { display: block; font-size:19px;}
+
+c.sailboat h2 { display: inline-block; color:white;}
+c.sailboat h2 small { display: block; font-size:19px;}
+c.sailboat p a { color:white; text-decoration: underline; }
+
+c.profile ul { margin-bottom: 30px; display:
