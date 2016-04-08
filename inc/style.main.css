@@ -36,7 +36,7 @@ c p.main { font-weight: bold; margin-bottom: 30px;}
 c img { max-width: 100vw; display: block }
 c img.main { margin-bottom: 30px }
 c b { font-weight: bold }
-
+c table { margin-bottom: 30px}
 c h { display: inline-block;vertical-align: top; width:calc(50% - 5px)}
 c hr { clear:both; }
 c w { max-width: 500px; display: block; margin:0px auto; }
@@ -91,5 +91,4 @@ c.status h2 small { display: block; font-size:19px;}
 c.sailboat h2 { display: inline-block; color:white;}
 c.sailboat h2 small { display: block; font-size:19px;}
 c.sailboat p a { color:white; text-decoration: underline; }
-
-c.profile ul { margin-bottom: 30px; display:
+c.sailboat tabl

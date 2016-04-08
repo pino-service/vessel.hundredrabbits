@@ -1,11 +1,14 @@
 class Project
 
   def initialize(row)
-    
+    @name = row[0]
+    @date = row[1]
+    @desc = row[2]
+    @link = row[3]
   end
 
   def name
-    return "Oquonie"
+    return @name
   end
 
   def date
@@ -13,15 +16,19 @@ class Project
   end
 
   def image
-    return "image"
+    return "<div style='width:100%; height:340px; border:1px solid #333; border-radius:4px'></div>"
   end
 
   def links
-    return "link"
+    return @link
   end
 
   def description
-    return "desc"
+    return @desc
+  end
+
+  def template
+    return "<c class='project'>#{image} #{description}</c>"
   end
 
 end

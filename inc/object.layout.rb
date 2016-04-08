@@ -104,27 +104,8 @@ class Layout
 
     end
 
-    def menu
-        return "<c class='menu'>
-            <ul>
-            <li><a href='/Profile' class='#{($query == 'Profile')?"selected":""}'>Nomads</a></li>
-            <li><a href='/Sailboat' class='#{($query == 'Sailboat')?"selected":""}'>Sailboat</a></li>
-            <li><a href='/Projects' class='#{($query == 'Projects')?"selected":""}'>Projects</a></li>
-            <li><a href='/Roadmap' class='#{($query == 'Roadmap')?"selected":""}'>Roadmap</a></li>
-            </ul>
-        </c>"
-    end
-
     def seal
         return "<c class='seal'><img src='img/seal.png' style='max-width:150px; margin:100px auto'/></c>"
-    end
-
-    def about
-        return "<c class='about'>about</c>"
-    end
-
-    def projects
-        return "<c class='projects'>projects</c>"
     end
 
     def projects
@@ -132,7 +113,7 @@ class Layout
         html = ""
 
         @projects.each do |project|
-            html += "<c class='project'>#{project.name} #{project.image} #{project.date} #{project.links}</c>"
+            html += project.template
         end
 
         return html
@@ -150,7 +131,7 @@ class Layout
         <c class='profile'>
         <img class='main' src='img/main.profile.jpg'/>
         <w>
-            <p class='main'>Something here.</p>
+            <p class='main'>Two unlikely sailors.</p>
             <h>
             <ul>
                 <li><b>Devine Lu Linvega</b></li>
@@ -167,4 +148,25 @@ class Layout
                 <li>Illustrator</li>
                 <li>English, French, Japanese</li>
                 <li><a href='https://twitter.com/rekkabell' target='_blank'>@rekkabell</a></li>
-    
+            </ul>
+            </h>
+        </w>
+        <p>Feel free to contact us with any question you may have, will will be happy to answer you.</p>
+        </c>"
+    end
+
+    def page_roadmap
+        return "
+        <c class='roadmap'><w><p class='main'>We aim to document the costs, the events and sails worth remembering.</p></w>
+        #{status}
+        #{timeline}
+        #{seal}"
+    end
+
+    def page_sailboat # #{lastEventOfType("sail").title}
+        return "
+        <c class='sailboat'>
+        <img class='main' src='img/sailboat.main.jpg'/>
+        <w>
+            <p class='main'>Our vessel is a 33' Yamaha Sloop, built in 1982. It is ocean ready and sleeps 5 passengers comfortably.</p>
+           
