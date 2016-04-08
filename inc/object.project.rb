@@ -1,34 +1,39 @@
 class Project
 
-  def initialize(row)
+  def initialize row
+
     @name = row[0]
     @date = row[1]
     @desc = row[2]
     @link = row[3]
+
   end
 
   def name
+
     return @name
+
   end
 
   def date
+
     return @date
+
   end
 
-  def image
-    return "<div style='width:100%; height:340px; border:1px solid #333; border-radius:4px'></div>"
+  def image id
+
+    return "<img src='files/projects.#{name.downcase}.#{id}.jpg'/>"
+
   end
 
   def links
-    return @link
-  end
 
-  def description
-    return @desc
-  end
+    html = "<ul class='links'>"
+    @link.lines.each do |link|
+      html += "<li><a class='#{link.split("|")[2]}' href='#{link.split("|")[1]}'>"+link.split("|").first+"</a></li>"
+    end
+    html += "</ul>"
+    return "<w>"+html+"</w>"
 
-  def template
-    return "<c class='project'>#{image} #{description}</c>"
   end
-
-end

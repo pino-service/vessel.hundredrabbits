@@ -91,4 +91,28 @@ c.status h2 small { display: block; font-size:19px;}
 c.sailboat h2 { display: inline-block; color:white;}
 c.sailboat h2 small { display: block; font-size:19px;}
 c.sailboat p a { color:white; text-decoration: underline; }
-c.sailboat tabl
+c.sailboat table { width:100%; }
+c.sailboat tr td, c.sailboat tr th { border-top: 1px solid #333;font-size: 16px;line-height: 36px;}
+c.sailboat tr th { font-weight: bold }
+
+c.profile ul { margin-bottom: 30px; display: block }
+c.profile ul li { line-height: 26px }
+c.profile ul li a { color:white; text-decoration: underline; }
+
+c.project a.photo img { max-width: 100%; }
+c.project a.photo { display: block;max-width: 350px;background: red;margin: 5px;border-radius: 3px;overflow: hidden;}
+c.project a.photo:nth-child(1) { max-width:710px; }
+c.project a.photo:nth-child(2), c.project a:nth-child(3) { float:left; }
+c.project p { font-size: 16px;line-height: 26px }
+c.project w { max-width: 720px; margin-bottom: 30px }
+c.project h img { max-width: 350px }
+c.project ul.links { max-width: 500px; margin: 0px auto}
+c.project ul.links li { font-size: 14px;line-height: 24px; position: relative}
+c.project ul.links li a:hover { text-decoration: underline; }
+c.project ul.links li a.paid { color:#bafff6; }
+c.project ul.links li a.paid:before { content:"—"; position: absolute; left:-20px;}
+
+c.footer { margin-bottom: 30px}
+c.footer ul { text-align: center }
+c.footer ul li { display:inline; }
+c.footer ul li img { width
