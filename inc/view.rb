@@ -13,6 +13,7 @@ require_relative "page.profile.rb"
 require_relative "page.sailboat.rb"
 require_relative "page.projects.rb"
 require_relative "page.roadmap.rb"
+require_relative "page.patrons.rb"
 
 require_relative "object.layout.rb"
 require_relative "object.event.rb"

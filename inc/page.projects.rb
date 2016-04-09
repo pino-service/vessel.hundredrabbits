@@ -5,6 +5,7 @@ class Layout
     	html = ""
 
     	@projects.each do |project|
+            if project.isPaid then next end
             html += project.template
         end
 

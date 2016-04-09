@@ -7,6 +7,7 @@ class Event
     @details = row[3]
     @url = row[4]
     @isPaid = row[5].to_i
+    @note = row[6]
     @icon_align = 10.5
 
     @extraClasses = ""
@@ -36,6 +37,10 @@ class Event
   def isPaid
     if @isPaid > 0 then return true end
     return
+  end
+
+  def note
+    return @note
   end
 
   def year
@@ -171,6 +176,7 @@ class Event
       <text>
         <span class='title'>Sail to #{title}</span>
         <span class='details'>+#{details}nm</span>
+        "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
       </text>
       <svg class='icon'><polygon points='10.5,2 5.5,11 15.5,11' style='fill:#333' /></svg>
       <line class='spacer'></line>

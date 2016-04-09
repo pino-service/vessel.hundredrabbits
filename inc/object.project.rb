@@ -6,6 +6,7 @@ class Project
     @date = row[1]
     @desc = row[2]
     @link = row[3]
+    @paid = row[4]
 
   end
 
@@ -18,6 +19,12 @@ class Project
   def date
 
     return @date
+
+  end
+
+  def isPaid
+
+    return (@paid.to_i == 1) ? true : nil
 
   end
 
@@ -37,3 +44,26 @@ class Project
     return "<w>"+html+"</w>"
 
   end
+
+  def description
+
+    return @desc
+
+  end
+
+  def template
+
+    return "
+    <c class='project'>
+      <w>
+        <a class='photo' href='/#{name}'>#{image(1)}</a> 
+        "+(isPaid == false ? "<a class='photo' href='/#{name}'>#{image(2)}</a><a class='photo' href='/#{name}'>#{image(3)}</a>" : "")+"
+        <hr/> 
+      </w>
+      #{description}
+      #{links}
+    </c>"
+
+  end
+
+end
