@@ -57,7 +57,7 @@ class Project
     <c class='project'>
       <w>
         <a class='photo' href='/#{name}'>#{image(1)}</a> 
-        "+(isPaid == false ? "<a class='photo' href='/#{name}'>#{image(2)}</a><a class='photo' href='/#{name}'>#{image(3)}</a>" : "")+"
+        "+(!isPaid ? "<a class='photo' href='/#{name}'>#{image(2)}</a><a class='photo' href='/#{name}'>#{image(3)}</a>" : "")+"
         <hr/> 
       </w>
       #{description}

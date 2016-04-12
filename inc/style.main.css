@@ -41,6 +41,7 @@ c table { margin-bottom: 30px}
 c h { display: inline-block;vertical-align: top; width:calc(50% - 5px)}
 c hr { clear:both; }
 c w { max-width: 500px; display: block; margin:0px auto; }
+c w.wide { max-width: 700px }
 
 c.header {}
 c.header svg { display: block; margin:100px auto; width: 88px; height:88px;  }
@@ -55,7 +56,7 @@ c.introduction ul li span { display: inline-block; width:calc(50% - 15px); text-
 c.introduction a { text-decoration: underline; }
 
 c.timeline { margin:30px 0px; position: relative;overflow: hidden}
-c.timeline event { display: block; font-size:12px; position:relative; left:calc(50% - 10px); line-height: 30px; margin-bottom: 20px}
+c.timeline event { display: block; font-size:12px; position:relative; left:calc(50% - 10px); line-height: 30px; margin-bottom: 20px; clear:both;}
 c.timeline event svg { width: 20px;height: 20px;display: inline-block;position: absolute;left: 0px;top: 5px;z-index: 900}
 c.timeline event svg line { stroke:#fff; }
 c.timeline event .title { font-weight: bold; padding-left:75px; padding-right:15px;}
@@ -81,6 +82,8 @@ c.timeline event.event line.spacer { background:white; }
 c.timeline event.sail line.spacer { display: none }
 c.timeline event.patreon { background: black;width: 100%;left: 0px;text-align: center;z-index: 9000 }
 c.timeline event.patreon .title { padding:0px; float:none; }
+c.timeline event.patreon hr { border-top:1px dotted #333; margin-top:-15px;}
+c.timeline event.patreon text { background: #000;padding: 20px 20px }
 c.timeline event.video .title { text-decoration: underline; }
 c.timeline event.first { background: black;width: 100%;left: 0px;text-align: center;z-index: 9000; margin-bottom: 0px }
 c.timeline event.first .title { padding:0px; float:none; }
@@ -101,9 +104,12 @@ c.sailboat tr th { font-weight: bold }
 c.profile ul { margin-bottom: 30px; display: block }
 c.profile ul li { line-height: 26px }
 c.profile ul li a { color:white; text-decoration: underline; }
+c.profile ul.faq li { font-size:14px; }
+c.profile ul.faq li.head { margin-bottom: 15px;color: #999; position: relative;}
+c.profile ul.faq li.head:before { content:"—"; position: absolute; left:-20px; }
 
 c.project a.photo img { max-width: 100%; }
-c.project a.photo { display: block;max-width: 350px;background: red;margin: 5px;border-radius: 3px;overflow: hidden;}
+c.project a.photo { display: block;max-width: 350px;margin: 5px;border-radius: 3px;overflow: hidden;}
 c.project a.photo:nth-child(1) { max-width:710px; }
 c.project a.photo:nth-child(2), c.project a:nth-child(3) { float:left; }
 c.project p { font-size: 16px;line-height: 26px }

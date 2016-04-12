@@ -125,7 +125,7 @@ class Event
     return "
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
-        <span class='title'>#{title}</span>
+        <span class='title'>#{title} Release</span>
         <span class='details'>#{details}</span>
         <span class='offset'>#{offset}</span>
       </text>
@@ -140,6 +140,8 @@ class Event
       <text>
         <span class='title'>#{title}</span>
         <span class='offset'>#{offset}</span>
+        <hr />
+        "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
       </text>
       <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/></svg>
       <line class='spacer'></line>
@@ -164,6 +166,8 @@ class Event
       <text>
         <span class='title'>#{title}</span>
         <span class='details'>#{details}$</span>
+        <hr />
+        "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
       </text>
       <svg class='icon'><circle cx='#{@icon_align}' cy='#{@icon_align}' r='3'></circle></svg>
       <line class='spacer'></line>
@@ -176,6 +180,7 @@ class Event
       <text>
         <span class='title'>Sail to #{title}</span>
         <span class='details'>+#{details}nm</span>
+        <hr />
         "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
       </text>
       <svg class='icon'><polygon points='10.5,2 5.5,11 15.5,11' style='fill:#333' /></svg>
@@ -203,6 +208,7 @@ class Event
         <span class='title'>#{title} Patreons</span>
         <span class='details'>+#{details}$</span>
       </text>
+      <hr />
     </event>"
   end
 

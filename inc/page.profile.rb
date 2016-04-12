@@ -26,7 +26,38 @@ class Layout
             </ul>
             </h>
         </w>
-        <p>Feel free to contact us with any question you may have, will will be happy to answer you.</p>
+        <p>Feel free to contact us with any question you may have, we will be happy to answer you.</p>
+        <h2>Frequently Asked Questions</h2>
+        <w>
+        <ul class='faq'>
+			<li class='head'><b>Why are you living on a sailboat?</b></li>
+			<li class='blank'>We decided to live on a saiboat to help us travel and reach our ideal <b>minimalist lifestyle</b>. We wanted to be mobile, learn new skills and lower our living costs.</li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>How much does it cost?</b></li>
+			<li class='blank'>You can see a breakdown of the costs in the <a href='/Roadmap'>Roadmap</a>. </li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>What type of boat are you living on?</b></li>
+			<li class='blank'>We live on a 33' <a href='/Sailboat'>1982 Yamaha Sloop</a> named <i>Irish Whiskey</i>, we purchased the boat used for 38'000$, in British Columbia. Its lenght is ideal for two people living on it. </li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>How are you getting internet access?</b></li>
+			<li class='blank'>Most marinas provides wi-fi to its guests, it's usually both reliable and fast. When we are at anchor, we use our phone's data plans.</li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>How do you shower? Wash your clothes?</b></li>
+			<li class='blank'>Most marinas include these facilities, we usually dock every 2 days and shower and wash our clothes then. We also have a shower onboard, we would only use it in emergencies.</li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>What did you bring with you on the boat?</b></li>
+			<li class='blank'>Moving to Vancouver from Montreal, we sold most of our things. We carried with us: laptops, cameras, our two bikes and a bunch of tools. Knowing that we were to live in a small space, we limited the things that we bought a year prior to the move.</li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>Is it worth it?</b></li>
+			<li class='blank'>Absolutely.</li>
+		</ul>
+		</w>
         </c>"
         
 	end
