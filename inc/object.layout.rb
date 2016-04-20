@@ -9,6 +9,18 @@ class Layout
 
     # Tools
 
+    def eventsOfType type
+
+        array = []
+
+        @events.reverse.each do |event|
+            if event.type == type then array.push(event) end
+        end
+
+        return array
+
+    end
+
     def lastEventOfType type
 
         @events.reverse.each do |event|

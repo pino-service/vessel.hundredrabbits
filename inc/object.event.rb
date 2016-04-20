@@ -8,6 +8,7 @@ class Event
     @url = row[4]
     @isPaid = row[5].to_i
     @note = row[6]
+    @geolocation = row[7]
     @icon_align = 10.5
 
     @extraClasses = ""
@@ -41,6 +42,18 @@ class Event
 
   def note
     return @note
+  end
+
+  def geolocation
+    return @geolocation
+  end
+
+  def latitude
+    return @geolocation.split(",").first.strip.to_f
+  end
+
+  def longitude
+    return @geolocation.split(",").last.strip.to_f
   end
 
   def year
@@ -105,6 +118,7 @@ class Event
     if type == "video" then return template_video end
     if type == "patreon" then return template_patreon end
     if type == "first" then return template_first end
+    if type == "press" then return template_press end
     return template_missing
   end
 
@@ -115,6 +129,19 @@ class Event
         <span class='title'>#{title}</span>
         <span class='details'>#{details}</span>
         <span class='offset'>#{offset}</span>
+      </text>
+      <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle></svg>
+      <line class='spacer'></line>
+    </event>"
+  end
+
+  def template_press
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <text>
+        <span class='title'>#{title}</span>
+        <span class='details'>#{details}</span>
+        <span class='offset'>Press</span>
       </text>
       <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle></svg>
       <line class='spacer'></line>
@@ -191,6 +218,7 @@ class Event
   def template_video
     return "
     <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <a href='#{url}' target='_blank'><img src='/files/event."+@title.gsub(" ",".").downcase+".jpg'/></a>
       <text>
         <span class='title'><a href='#{url}' target='_blank'>#{title}</a></span>
         <span class='details'>#{details}</span>

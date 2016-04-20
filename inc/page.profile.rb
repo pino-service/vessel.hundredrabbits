@@ -28,14 +28,14 @@ class Layout
         </w>
         <p>Feel free to contact us with any question you may have, we will be happy to answer you.</p>
         <h2>Frequently Asked Questions</h2>
-        <w>
+        <w class='wide'>
         <ul class='faq'>
 			<li class='head'><b>Why are you living on a sailboat?</b></li>
 			<li class='blank'>We decided to live on a saiboat to help us travel and reach our ideal <b>minimalist lifestyle</b>. We wanted to be mobile, learn new skills and lower our living costs.</li>
 		</ul>
 		<ul class='faq'>
 			<li class='head'><b>How much does it cost?</b></li>
-			<li class='blank'>You can see a breakdown of the costs in the <a href='/Roadmap'>Roadmap</a>. </li>
+			<li class='blank'>We are maintaining a general breakdown of the costs in the <a href='/Roadmap'>Roadmap</a>, and a <a href='https://docs.google.com/spreadsheets/d/1Pjtjwu4yGIZgxLSZMQ9pNmQn0T0KRUZFbMOlCKgtG4o/edit#gid=0'>detailed spreadsheet</a> of our daily spendings. </li>
 		</ul>
 		<ul class='faq'>
 			<li class='head'><b>What type of boat are you living on?</b></li>
@@ -52,6 +52,14 @@ class Layout
 		<ul class='faq'>
 			<li class='head'><b>What did you bring with you on the boat?</b></li>
 			<li class='blank'>Moving to Vancouver from Montreal, we sold most of our things. We carried with us: laptops, cameras, our two bikes and a bunch of tools. Knowing that we were to live in a small space, we limited the things that we bought a year prior to the move.</li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>Have you had to resort on reading nautical maps instead of relying on GPS?</b></li>
+			<li class='blank'>We mainly use Navionics for navigation, but we also have paper maps as they are required by law and are often more up to date with the latest wrecks and rocks.</li>
+		</ul>
+		<ul class='faq'>
+			<li class='head'><b>Where are you heading?</b></li>
+			<li class='blank'>We don't know what our final stop is, but we'll spend the summer in British-Columbia and head elsewhere for the winter. Hopefully, Hawaii.</li>
 		</ul>
 		<ul class='faq'>
 			<li class='head'><b>Is it worth it?</b></li>
