@@ -91,12 +91,14 @@ c.timeline event.first { background: black;width: 100%;left: 0px;text-align: cen
 c.timeline event.first .title { padding:0px; float:none; }
 c.timeline event .note { display: block;padding-left: 75px;padding-right: 15px;color: #999;max-width: 250px;line-height: 20px}
 c.timeline event.odd .note { float:right; padding-left:15px; padding-right:75px; }
-c.timeline event.video { min-height: 100px }
-c.timeline event.video text { display: block;padding-top: 35px }
+c.timeline event.video { min-height: 170px }
+c.timeline event.video text { display: block;padding-top: 75px }
 c.timeline event.video line { display: none }
 c.timeline event.video .title { text-decoration: underline; }
-c.timeline event.video img { width: 100px;height: 100px;border-radius: 100px;position: absolute;right: -40px;z-index: 9999}
-c.timeline event.video.even img { right:initial; left:-40px; }
+c.timeline event.video img { width: 150px;height: 150px;border-radius: 100px;position: absolute;right: -80px;z-index: 9999;border: 15px solid black}
+c.timeline event.video.even img { right:initial; left: -65px;; }
+c.timeline event.video.even .title { padding-left: 130px }
+c.timeline event.video.odd .title { padding-right: 110px }
 
 c.status { background: #000;padding: 30px 0px;}
 c.status h2 { width:50%; display: inline-block; color:white; float:left;}

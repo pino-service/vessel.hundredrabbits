@@ -14,6 +14,8 @@ class Layout
 
         count = 0
         @events.reverse.each do |event|
+            if event.type == "press" then next end
+            if event.type == "hidden" then next end
             event.addClass( (count % 2 == 0) ? "odd" : "even" )
             html += event.template
             count += 1
