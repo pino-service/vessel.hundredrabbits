@@ -38,7 +38,7 @@ class Project
 
     html = "<ul class='links'>"
     @link.lines.each do |link|
-      html += "<li><a class='#{link.split("|")[2]}' href='#{link.split("|")[1]}'>"+link.split("|").first+"</a></li>"
+      html += "<li class='#{link.split("|")[2]}'><a href='#{link.split("|")[1]}'>"+link.split("|").first+"</a></li>"
     end
     html += "</ul>"
     return "<w>"+html+"</w>"
