@@ -2,7 +2,7 @@ class Layout
 
     def page_roadmap
         return "
-        <c class='roadmap'><w><p class='main'>We aim to document the costs, the events and sails worth remembering.</p></w>
+        <c class='roadmap'>
         #{status}
         #{timeline}
         #{seal}"

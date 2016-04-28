@@ -10,9 +10,7 @@ class Layout
         end
 
         return "
-        <c class='projects'>
-        <w><p class='main'>Here are a few things we made along the way.</p></w>
-        #{html}</c>"
+        <c class='projects'>#{html}</c>"
 
     end
 
