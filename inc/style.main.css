@@ -42,8 +42,9 @@ c h { display: inline-block;vertical-align: top; width:calc(50% - 5px)}
 c hr { clear:both; }
 c w { width: calc(100vw - 320px);display: block;margin: 0px auto;max-width: 600px }
 c w.wide { max-width: 700px }
+c pre { max-width: 600px;margin: 0px auto;margin-bottom: 30px;font-family: courier;font-size: 12px;line-height: 20px;background: #fff;color: #000;padding: 15px;border-radius: 3px }
 
-ul.default { margin-bottom: 30px; line-height: 30px;text-align: center }
+ul.default { margin-bottom: 30px;line-height: 30px;text-align: left;column-count: 2;font-size: 14px;}
 ul.default li a { font-weight: bold }
 
 c.header { z-index: 9000;position: fixed; top:0 }
@@ -137,9 +138,7 @@ c.footer ul li { display:inline; }
 c.footer ul li img { width:30px; display: inline-block; opacity: 0.2 }
 c.footer ul li img:hover { opacity: 1 }
 
-c.sailboat img { max-width: 700px; margin:0px auto; }
-
-c.patrons img { max-width: 700px; margin:0px auto; }
+c.sailboat img { max-width: 600px;margin: 0px auto;margin-bottom: 30px;border-radius: 3px }
 
 c.menu { z-index: 9000;position: fixed;top: 110px  }
 c.menu ul { margin: 34px}
@@ -151,6 +150,7 @@ c.about {}
 c.seal {}
 c.roadmap { margin-top: 120px  }
 c.projects { margin-top: 120px  }
+c.cargo { margin-top: 120px  }
 c.footer { z-index: 9000;position: relative; z-index: 9000;padding: 10px 20px;margin: 60px auto;  }
 
 #map { height:100vh; width:100vw; position: fixed !important; top:0px; left:0px; }

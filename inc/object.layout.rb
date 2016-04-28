@@ -83,7 +83,7 @@ class Layout
         elsif $query == "Projects" then html += page_projects
         elsif $query == "Sailboat" then html += page_sailboat
         elsif $query == "Profile" then html += page_profile
-        elsif $query == "Patrons" then html += page_patrons
+        elsif $query == "Cargo" then html += page_cargo
         elsif project = projectWithName($query) then html += page_project(project)
         else html += page_home end
 

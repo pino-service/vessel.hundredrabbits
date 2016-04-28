@@ -30,7 +30,7 @@ class Project
 
   def image id
 
-    return "<img src='files/projects.#{name.downcase}.#{id}.jpg'/>"
+    return "<img src='files/projects.#{name.gsub(" ",".").downcase}.#{id}.jpg'/>"
 
   end
 
