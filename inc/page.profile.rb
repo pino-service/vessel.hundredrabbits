@@ -39,7 +39,7 @@ class Layout
 		</ul>
 		<ul class='faq'>
 			<li class='head'><b>What type of boat are you living on?</b></li>
-			<li class='blank'>We live on a 33' <a href='/Sailboat'>1982 Yamaha Sloop</a> named <i>Irish Whiskey</i>, we purchased the boat used for 38'000$, in British Columbia. Its lenght is ideal for two people living on it. </li>
+			<li class='blank'>We live on a 33' <a href='/Sailboat'>1982 Yamaha Sloop</a> named <i>Irish Whiskey</i>, we purchased the boat used for 38'000$, in British Columbia. Its length is ideal for two people living on it. </li>
 		</ul>
 		<ul class='faq'>
 			<li class='head'><b>How are you getting internet access?</b></li>
