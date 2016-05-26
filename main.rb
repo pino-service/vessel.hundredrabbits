@@ -24,7 +24,7 @@ $query = ARGV[0].to_s.gsub("+"," ").to_s
 require("/xxiivv/Jiin/core/jiin.rb")
 $jiin = Jiin.new
 
-events = $jiin.command("disk load events")
+events = $jiin.command("disk load hundred")
 # projects = $jiin.command("disk load projects")
 projects = []
 layout = Layout.new(events,projects)

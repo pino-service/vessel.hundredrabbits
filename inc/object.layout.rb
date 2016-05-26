@@ -17,7 +17,7 @@ class Layout
 
         array = []
 
-        @events.each do |date,event|
+        @events.sort_by{|k,to_i,v| k}.reverse.each do |date,event|
             if event.type == type then array.push(event) end
         end
 
