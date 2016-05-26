@@ -2,8 +2,12 @@ class Layout
 
     def initialize events, projects
 
-        @events = events
         @projects = projects
+
+        @events = {}
+        events.each do |date,event|
+            @events[date] = Event.new(date,event)
+        end
 
     end
 
@@ -13,7 +17,7 @@ class Layout
 
         array = []
 
-        @events.reverse.each do |event|
+        @events.each do |date,event|
             if event.type == type then array.push(event) end
         end
 
@@ -23,7 +27,7 @@ class Layout
 
     def lastEventOfType type
 
-        @events.reverse.each do |event|
+        @events.reverse.each do |date,event|
             if event.type == type then return event end
         end
 

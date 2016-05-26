@@ -1,16 +1,14 @@
 class Event
 
-  def initialize(row)
-    @date = row[0]
-    @type = row[1]
-    @title = row[2]
-    @details = row[3]
-    @url = row[4]
-    @isPaid = row[5].to_i
-    @note = row[6]
-    @geolocation = row[7]
+  def initialize(date,data)
+    @date = date
+    @type = data["TYPE"]
+    @title = data["NAME"]
+    @value = data["VLUE"]
+    @text = data["TEXT"]
+    @url = data["LINK"]
+    @geolocation = data["POSI"]
     @icon_align = 10.5
-
     @extraClasses = ""
   end
 
@@ -23,11 +21,11 @@ class Event
   end
 
   def title
-    return url ? "<a href='#{@url}' target='_blank' class='#{((isPaid) ? "paid" : "")}'>#{@title}</a>" : "#{@title}"
+    return url ? "<a href='#{@url}' target='_blank'>#{@title}</a>" : "#{@title}"
   end
 
-  def details
-    return @details
+  def value
+    return @value
   end
 
   def url
@@ -40,8 +38,8 @@ class Event
     return
   end
 
-  def note
-    return @note
+  def text
+    return @text
   end
 
   def geolocation
@@ -127,7 +125,7 @@ class Event
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
         <span class='title'>#{title}</span>
-        <span class='details'>#{details}</span>
+        <span class='details'>#{value}</span>
         <span class='offset'>#{offset}</span>
       </text>
       <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle></svg>
@@ -140,7 +138,7 @@ class Event
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
         <span class='title'>#{title}</span>
-        <span class='details'>#{details}</span>
+        <span class='details'>#{value}</span>
         <span class='offset'>Press</span>
       </text>
       <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle></svg>
@@ -153,7 +151,7 @@ class Event
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
         <span class='title'>#{title} Release</span>
-        <span class='details'>#{details}</span>
+        <span class='details'>#{value}</span>
         <span class='offset'>#{offset}</span>
       </text>
       <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle><circle cx='10.5' cy='10.5' r='5' fill='none' stroke='white' stroke-width='1px'></circle></svg>
@@ -168,7 +166,7 @@ class Event
         <span class='title'>#{title}</span>
         <span class='offset'>#{offset}</span>
         <hr />
-        "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
+        "+(@text.to_s != "1" ? "<span class='note'>#{text}</span>" : "")+"
       </text>
       <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/></svg>
       <line class='spacer'></line>
@@ -189,12 +187,12 @@ class Event
 
   def template_expense
     return "
-    <event time='#{time}' class='#{type} #{@extraClasses} #{(details.to_i > 0 ? "gain" : "spending")}'>
+    <event time='#{time}' class='#{type} #{@extraClasses} #{(value.to_i > 0 ? "gain" : "spending")}'>
       <text>
         <span class='title'>#{title}</span>
-        <span class='details'>#{details}$</span>
+        <span class='details'>#{value}$</span>
         <hr />
-        "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
+        "+(@note.to_s != "1" ? "<span class='note'>#{text}</span>" : "")+"
       </text>
       <svg class='icon'><circle cx='#{@icon_align}' cy='#{@icon_align}' r='3'></circle></svg>
       <line class='spacer'></line>
@@ -206,9 +204,9 @@ class Event
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
         <span class='title'>Sail to #{title}</span>
-        <span class='details'>+#{details}nm</span>
+        <span class='details'>+#{value}nm</span>
         <hr />
-        "+(@note.to_s != "1" ? "<span class='note'>#{note}</span>" : "")+"
+        "+(@note.to_s != "1" ? "<span class='note'>#{text}</span>" : "")+"
       </text>
       <svg class='icon'><polygon points='10.5,2 5.5,11 15.5,11' style='fill:#333' /></svg>
       <line class='spacer'></line>
@@ -221,7 +219,7 @@ class Event
       <a href='#{url}' target='_blank'><img src='/files/event."+@title.gsub(" ",".").downcase+".jpg'/></a>
       <text>
         <span class='title'><a href='#{url}' target='_blank'>#{title}</a></span>
-        <span class='details'>#{details}</span>
+        <span class='details'>#{value}</span>
         <span class='offset'>#{offset}</span>
       </text>
       <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/></svg>
@@ -234,7 +232,7 @@ class Event
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
         <span class='title'>#{title} Patreons</span>
-        <span class='details'>+#{details}$</span>
+        <span class='details'>+#{value}$</span>
       </text>
       <hr />
     </event>"
@@ -245,7 +243,7 @@ class Event
     <event time='#{time}' class='#{type} #{@extraClasses}'>
       <text>
         <span class='title'>#{title}</span>
-        <span class='details'>#{details}</span>
+        <span class='details'>#{value}</span>
       </text>
     </event>"
   end
