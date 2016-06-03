@@ -1,7 +1,8 @@
 class Layout
 
-    def initialize events, projects
+    def initialize query, events, projects
 
+        @query = query
         @projects = projects
 
         @events = {}
@@ -83,12 +84,12 @@ class Layout
 
         html = ""
 
-        if $query == "Roadmap" then html += page_roadmap
-        elsif $query == "Projects" then html += page_projects
-        elsif $query == "Sailboat" then html += page_sailboat
-        elsif $query == "Profile" then html += page_profile
-        elsif $query == "Cargo" then html += page_cargo
-        elsif project = projectWithName($query) then html += page_project(project)
+        if @query == "roadmap" then html += page_roadmap
+        elsif @query == "projects" then html += page_projects
+        elsif @query == "sailboat" then html += page_sailboat
+        elsif @query == "profile" then html += page_profile
+        elsif @query == "cargo" then html += page_cargo
+        elsif project = projectWithName(@query) then html += page_project(project)
         else html += page_home end
 
         return "#{header}#{menu}#{html}#{footer}"
@@ -98,10 +99,10 @@ class Layout
     def menu
         return "<c class='menu'>
             <ul>
-            <li><a href='/Profile' class='#{($query == 'Profile')?'selected':""}'>Nomads</a></li>
-            <li><a href='/Sailboat' class='#{($query == 'Sailboat')?'selected':""}'>Sailboat</a></li>
-            <li><a href='/Projects' class='#{($query == 'Projects')?'selected':""}'>Projects</a></li>
-            <li><a href='/Roadmap' class='#{($query == 'Roadmap')?'selected':""}'>Roadmap</a></li>
+            <li><a href='/Profile' class='#{(@query == 'profile')?'selected':""}'>Nomads</a></li>
+            <li><a href='/Sailboat' class='#{(@query == 'sailboat')?'selected':""}'>Sailboat</a></li>
+            <li><a href='/Projects' class='#{(@query == 'projects')?'selected':""}'>Projects</a></li>
+            <li><a href='/Roadmap' class='#{(@query == 'roadmap')?'selected':""}'>Roadmap</a></li>
             </ul>
         </c>"
     end
