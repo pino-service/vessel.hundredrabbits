@@ -17,8 +17,9 @@ require_relative "inc/object.event.rb"
 require_relative "inc/object.project.rb"
 require_relative "inc/object.graph.rb"
 
+class Hundred
 
-class Site
+	include Lamp
 
 	def initialize query
 
@@ -26,9 +27,15 @@ class Site
 
 	end
 
+	def application
+
+		return view
+
+	end
+
 	def view
 
-		events = $jiin.command("disk load hundred")
+		events = $jiin.command("grid hundred")
 		projects = []
 		layout = Layout.new(@query,events,projects)
 
