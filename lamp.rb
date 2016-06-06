@@ -21,23 +21,15 @@ class Hundred
 
 	include Lamp
 
-	def initialize query
-
-		@query = query
+	def initialize query = nil
 
 	end
 
-	def application
-
-		return view
-
-	end
-
-	def view
+	def application query = nil
 
 		events = $jiin.command("grid hundred")
 		projects = []
-		layout = Layout.new(@query,events,projects)
+		layout = Layout.new(query,events,projects)
 
 		puts "
 		<!DOCTYPE html>

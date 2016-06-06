@@ -2,7 +2,7 @@ class Layout
 
     def initialize query, events, projects
 
-        @query = query
+        @query = query.downcase
         @projects = projects
 
         @events = {}
