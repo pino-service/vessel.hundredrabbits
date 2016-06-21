@@ -43,15 +43,15 @@ class Event
   end
 
   def geolocation
-    return @geolocation
+    return @geolocation.reverse
   end
 
   def latitude
-    return @geolocation.split(",").first.strip.to_f
+    return @geolocation.first.split(",").first.strip.to_f
   end
 
   def longitude
-    return @geolocation.split(",").last.strip.to_f
+    return @geolocation.first.split(",").last.strip.to_f
   end
 
   def year

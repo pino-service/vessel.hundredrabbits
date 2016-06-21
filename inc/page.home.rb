@@ -100,7 +100,11 @@ async defer></script>'
 		html = ""
 
 		@sails.each do |event|
-			html += "{lat: #{event.latitude}, lng: #{event.longitude}},"
+      event.geolocation.each do |position|
+        lat = position.split(",").first.strip.to_f
+        lon = position.split(",").last.strip.to_f
+        html += "{lat: #{lat}, lng: #{lon}}," 
+      end
 		end
 
 		html = html[0,html.length-1]
