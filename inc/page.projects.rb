@@ -4,10 +4,7 @@ class Layout
 
     	html = ""
 
-    	@projects.each do |project|
-            if project.isPaid then next end
-            html += project.template
-        end
+        html += "<p>We are building a new project page, in the meantime, follow our projects on <a href='https://twitter.com/hundredrabbits' target='_blank'>Twitter</a>.</p>"
 
         return "
         <c class='projects'>#{html}</c>"
