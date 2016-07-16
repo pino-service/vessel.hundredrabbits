@@ -8,13 +8,11 @@ require 'date'
 require_relative "inc/page.home.rb"
 require_relative "inc/page.profile.rb"
 require_relative "inc/page.sailboat.rb"
-require_relative "inc/page.projects.rb"
 require_relative "inc/page.roadmap.rb"
 require_relative "inc/page.cargo.rb"
 
 require_relative "inc/object.layout.rb"
 require_relative "inc/object.event.rb"
-require_relative "inc/object.project.rb"
 require_relative "inc/object.graph.rb"
 
 class Hundred
@@ -28,8 +26,7 @@ class Hundred
 	def application query = nil
 
 		events = $jiin.command("grid hundred")
-		projects = []
-		layout = Layout.new(query,events,projects)
+		layout = Layout.new(query,events)
 
 		puts "
 		<!DOCTYPE html>

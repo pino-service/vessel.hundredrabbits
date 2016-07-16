@@ -117,6 +117,7 @@ class Event
     if type == "patreon" then return template_patreon end
     if type == "first" then return template_first end
     if type == "press" then return template_press end
+    if type == "podcast" then return template_podcast end
     return template_missing
   end
 
@@ -245,6 +246,19 @@ class Event
         <span class='title'>#{title}</span>
         <span class='details'>#{value}</span>
       </text>
+    </event>"
+  end
+
+  def template_podcast
+    return "
+    <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <text>
+        <span class='title'>#{title}</span> 
+        <span class='offset'>Audio</span>
+        <hr />"+(@note.to_s != "1" ? "<span class='note'>#{text}</span>" : "")+"
+      </text>
+      <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/></svg>
+      <line class='spacer'></line>
     </event>"
   end
 
