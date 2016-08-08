@@ -46,7 +46,7 @@ class Layout
     end
 
     def seal
-        return "<c class='seal'><img src='img/seal.png' style='max-width:150px; margin:100px auto'/></c>"
+        return "<c class='seal'><img src='img/interface/seal.png' style='max-width:150px; margin:100px auto'/></c>"
     end
 
 
