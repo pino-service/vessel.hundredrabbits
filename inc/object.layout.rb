@@ -1,9 +1,8 @@
 class Layout
 
-    def initialize query, events, projects
+    def initialize query, events
 
         @query = query.downcase
-        @projects = projects
 
         @events = {}
         events.each do |date,event|
@@ -44,15 +43,6 @@ class Layout
 
     end
 
-    def projectWithName name
-
-    	@projects.each do |project|
-    		if project.name == name then return project end
-    	end
-        return false
-
-    end
-
     def header
 
         logo = ""
@@ -85,11 +75,9 @@ class Layout
         html = ""
 
         if @query == "roadmap" then html += page_roadmap
-        elsif @query == "projects" then html += page_projects
         elsif @query == "sailboat" then html += page_sailboat
         elsif @query == "profile" then html += page_profile
         elsif @query == "cargo" then html += page_cargo
-        elsif project = projectWithName(@query) then html += page_project(project)
         else html += page_home end
 
         return "#{header}#{menu}#{html}#{footer}"
@@ -101,7 +89,6 @@ class Layout
             <ul>
             <li><a href='/Profile' class='#{(@query == 'profile')?'selected':""}'>Nomads</a></li>
             <li><a href='/Sailboat' class='#{(@query == 'sailboat')?'selected':""}'>Sailboat</a></li>
-            <li><a href='/Projects' class='#{(@query == 'projects')?'selected':""}'>Projects</a></li>
             <li><a href='/Roadmap' class='#{(@query == 'roadmap')?'selected':""}'>Roadmap</a></li>
             </ul>
         </c>"
