@@ -27,7 +27,7 @@ class Hundred
 
 	def application query = nil
 
-		events = $jiin.command("grid hundred")
+		events = $jiin.command("grid hundred").to_h
 		projects = []
 		layout = Layout.new(query,events,projects)
 
