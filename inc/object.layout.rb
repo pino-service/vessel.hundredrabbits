@@ -64,9 +64,9 @@ class Layout
     def footer
         return "<c class='footer'>
         <ul>
-            <li><a target='_blank' href='https://www.patreon.com/100'><img src='img/icon.patreon.png'/></a></li>
-            <li><a target='_blank' href='https://twitter.com/hundredrabbits'><img src='img/icon.twitter.png'/></a></li>
-            <li><a target='_blank' href='https://github.com/hundredrabbits'><img src='img/icon.github.png'/></a></li>
+            <li><a target='_blank' href='https://www.patreon.com/100'><img src='img/interface/icon.patreon.png'/></a></li>
+            <li><a target='_blank' href='https://twitter.com/hundredrabbits'><img src='img/interface/icon.twitter.png'/></a></li>
+            <li><a target='_blank' href='https://github.com/hundredrabbits'><img src='img/interface/icon.github.png'/></a></li>
         </ul></c>"
     end
 
