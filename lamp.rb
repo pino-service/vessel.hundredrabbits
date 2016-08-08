@@ -25,14 +25,8 @@ class Hundred
 
 	def application query = nil
 
-<<<<<<< HEAD
 		events = $jiin.command("grid hundred").to_h
-		projects = []
-		layout = Layout.new(query,events,projects)
-=======
-		events = $jiin.command("grid hundred")
 		layout = Layout.new(query,events)
->>>>>>> origin/master
 
 		puts "
 		<!DOCTYPE html>
