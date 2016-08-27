@@ -21,16 +21,16 @@ class Hundred
 
 	def http q = nil
 
-		layout = Layout.new(query,En.new("hundred").to_h)
+		layout = Layout.new(q,En.new("hundred").to_h)
 
-		puts "
+		return "
 		<!DOCTYPE html>
 		<html>
 		<head>
 			<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js' ></script>
 			<link rel='stylesheet' type='text/css' href='inc/style.main.css' />
 			<script src='inc/script.main.js'></script>
-			<title>Hundred Rabbits | #{$query}</title>
+			<title>Hundred Rabbits | #{$q}</title>
 		</head>
 		<body>
 			#{layout.body}
