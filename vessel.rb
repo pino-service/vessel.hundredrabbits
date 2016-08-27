@@ -17,7 +17,7 @@ require_relative "inc/object.layout.rb"
 require_relative "inc/object.event.rb"
 require_relative "inc/object.graph.rb"
 
-class Hundred
+class Hundr
 
 	def http q = nil
 
