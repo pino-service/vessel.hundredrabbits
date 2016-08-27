@@ -1,6 +1,8 @@
 #!/bin/env ruby
 # encoding: utf-8
 
+$vessel_path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
+
 # Imports
 
 require 'date'
@@ -17,16 +19,9 @@ require_relative "inc/object.graph.rb"
 
 class Hundred
 
-	include Lamp
+	def http q = nil
 
-	def initialize query = nil
-
-	end
-
-	def application query = nil
-
-		events = $jiin.command("grid hundred").to_h
-		layout = Layout.new(query,events)
+		layout = Layout.new(query,En.new("hundred").to_h)
 
 		puts "
 		<!DOCTYPE html>
