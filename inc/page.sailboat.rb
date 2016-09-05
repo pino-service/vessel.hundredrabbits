@@ -4,7 +4,7 @@ class Layout
 
     	return "
         <c class='sailboat'>
-        <img class='main' src='files/sailboat.main.jpg'/>
+        <img class='main' src='content/sailboat.main.jpg'/>
         <w>
             #{overview}
         </w>
@@ -17,7 +17,7 @@ class Layout
         return "<p class='main'>Our vessel is a 33' Yamaha Sloop, built in 1982. It is ocean ready and sleeps 5 passengers comfortably.</p>
         <p>We maintain an updated <a href='https://github.com/hundredrabbits/Yamaha-33/blob/master/README.md' target='_blank'>spec sheet</a> with technical details.</p>
 
-        <img src='files/sailboat.studio.2.jpg'/>
+        <img src='content/sailboat.studio.2.jpg'/>
 
         <table>
             <tr><th>Make</th><td>Yamaha</td><th>Year</th><td>1982</td></tr>
@@ -26,7 +26,7 @@ class Layout
             <tr><th>Draft</th><td>6.25ft(1.91m)</td><th>Height</th><td>50.00ft</td></tr>
         </table>
 
-        <img src='files/sailboat.studio.1.jpg'/>
+        <img src='content/sailboat.studio.1.jpg'/>
 
         "
     end

@@ -4,7 +4,7 @@ class Layout
 
 		return "
         <c class='profile'>
-        <img class='main' src='files/main.profile.jpg'/>
+        <img class='main' src='content/main.profile.jpg'/>
         <w>
             <p class='main'>Two unlikely sailors.</p>
             <h>

@@ -217,7 +217,7 @@ class Event
   def template_video
     return "
     <event time='#{time}' class='#{type} #{@extraClasses}'>
-      <a href='#{url}' target='_blank'><img src='/files/event."+@title.gsub(" ",".").downcase+".jpg'/></a>
+      <a href='#{url}' target='_blank'><img src='/content/event."+@title.gsub(" ",".").downcase+".jpg'/></a>
       <text>
         <span class='title'><a href='#{url}' target='_blank'>#{title}</a></span>
         <span class='details'>#{value}</span>
