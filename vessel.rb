@@ -11,11 +11,13 @@ require_relative "inc/page.home.rb"
 require_relative "inc/page.profile.rb"
 require_relative "inc/page.sailboat.rb"
 require_relative "inc/page.roadmap.rb"
-require_relative "inc/page.cargo.rb"
+require_relative "inc/page.patreon.rb"
+require_relative "inc/page.projects.rb"
 
 require_relative "inc/object.layout.rb"
 require_relative "inc/object.event.rb"
 require_relative "inc/object.graph.rb"
+require_relative "inc/object.project.rb"
 
 class Hundr
 
