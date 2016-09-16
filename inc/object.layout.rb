@@ -77,7 +77,8 @@ class Layout
         if @query == "roadmap" then html += page_roadmap
         elsif @query == "sailboat" then html += page_sailboat
         elsif @query == "profile" then html += page_profile
-        elsif @query == "cargo" then html += page_cargo
+        elsif @query == "patreon" then html += page_patreon
+        elsif @query == "projects" then html += page_projects
         else html += page_home end
 
         return "#{header}#{menu}#{html}#{footer}"
@@ -89,6 +90,7 @@ class Layout
             <ul>
             <li><a href='/Profile' class='#{(@query == 'profile')?'selected':""}'>Nomads</a></li>
             <li><a href='/Sailboat' class='#{(@query == 'sailboat')?'selected':""}'>Sailboat</a></li>
+            <li><a href='/Projects' class='#{(@query == 'projects')?'selected':""}'>Projects</a></li>
             <li><a href='/Roadmap' class='#{(@query == 'roadmap')?'selected':""}'>Roadmap</a></li>
             </ul>
         </c>"
