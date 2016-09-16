@@ -5,8 +5,6 @@ $vessel_path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
 
 # Imports
 
-require 'date'
-
 require_relative "inc/page.home.rb"
 require_relative "inc/page.profile.rb"
 require_relative "inc/page.sailboat.rb"
@@ -21,24 +19,32 @@ require_relative "inc/object.project.rb"
 
 class Hundr
 
-	def http q = nil
+  class Actions
 
-		layout = Layout.new(q,En.new("hundred").to_h)
+    include ActionCollection
 
-		return "
-		<!DOCTYPE html>
-		<html>
-		<head>
-			<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js' ></script>
-			<link rel='stylesheet' type='text/css' href='inc/style.main.css' />
-			<script src='inc/script.main.js'></script>
-			<title>Hundred Rabbits | #{$q}</title>
-		</head>
-		<body>
-			#{layout.body}
-		</body>
-		</html>"
+    def http q = nil
 
-	end
+      layout = Layout.new(q,En.new("hundred").to_h)
+
+      return "
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js' ></script>
+        <link rel='stylesheet' type='text/css' href='inc/style.main.css' />
+        <script src='inc/script.main.js'></script>
+        <title>Hundred Rabbits | #{$q}</title>
+      </head>
+      <body>
+        #{layout.body}
+      </body>
+      </html>"
+
+    end
+
+  end
+
+  def actions ; return Actions.new(self,self) end
 
 end
