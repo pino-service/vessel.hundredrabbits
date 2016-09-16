@@ -14,7 +14,8 @@ class Project
   def template
 
   	return "<c class='project'>
-  	<h1>#{@name}</h1>
+  	<img src='content/project.#{@name.downcase}.jpg'/>
+  	<p class='main'>#{@name}</p>
   	<p>#{@bref}</p>
   	<p>#{@long}</p>
   	<p>#{@link}</p>
