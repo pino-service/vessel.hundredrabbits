@@ -10,9 +10,12 @@ class Layout
         end
 
         return "
-        <c class='patreon'>
-        <w><p class='main'>Temporary project page.</p>
-        <p>There might be errors? there will be errors. Will fix this shortly.</p>#{html}</w></c>"
+        <c class='projects'>
+        <w>
+            <p class='main' style='margin-top:90px'>We also make things sometimes</p>
+            <p>We work until we run out of power on the boat, here are a few things that we built inbetween the storms.</p>
+            #{html}
+        </w></c>"
 
     end
 
