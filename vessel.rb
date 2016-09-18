@@ -9,7 +9,7 @@ require_relative "inc/page.home.rb"
 require_relative "inc/page.profile.rb"
 require_relative "inc/page.sailboat.rb"
 require_relative "inc/page.roadmap.rb"
-require_relative "inc/page.patreon.rb"
+require_relative "inc/page.patreons.rb"
 require_relative "inc/page.projects.rb" 
 
 require_relative "inc/object.layout.rb"

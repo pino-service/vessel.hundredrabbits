@@ -77,7 +77,7 @@ class Layout
         if @query == "roadmap" then html += page_roadmap
         elsif @query == "sailboat" then html += page_sailboat
         elsif @query == "profile" then html += page_profile
-        elsif @query == "patreon" then html += page_patreon
+        elsif @query == "patreons" then html += page_patreons
         elsif @query == "projects" then html += page_projects
         else html += page_home end
 
@@ -92,8 +92,8 @@ class Layout
             <li><a href='/Sailboat' class='#{(@query == 'sailboat')?'selected':""}'>Sailboat</a></li>
             <li><a href='/Projects' class='#{(@query == 'projects')?'selected':""}'>Projects</a></li>
             <li><a href='/Roadmap' class='#{(@query == 'roadmap')?'selected':""}'>Roadmap</a></li>
-            #{(@query == 'patreons')?'<li><a href='/Roadmap' class='selected' style='color:red'>Patreons</a></li>':""}
+            #{(@query == 'patreons')?'<li><a href=\'/Roadmap\' class=\'selected\' style=\'color:red\'>Patreons</a></li>':""}
             </ul>
         </c>"
     end
-end
+end #{(@query == 'patreons')?'<li><a href='/Roadmap' class='selected' style='color:red'>Patreons</a></li>':""}

@@ -8,6 +8,14 @@ class Project
     @bref = @content['BREF']
     @long = @content['LONG'].to_a
     @link = @content['LINK'].to_a
+    @paid = @content['PAID'].to_s
+
+  end
+
+  def is_paid
+
+    if @paid == "YES" then return true end
+    return nil
 
   end
 
