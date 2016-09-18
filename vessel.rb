@@ -10,7 +10,7 @@ require_relative "inc/page.profile.rb"
 require_relative "inc/page.sailboat.rb"
 require_relative "inc/page.roadmap.rb"
 require_relative "inc/page.patreon.rb"
-require_relative "inc/page.projects.rb"
+require_relative "inc/page.projects.rb" 
 
 require_relative "inc/object.layout.rb"
 require_relative "inc/object.event.rb"
@@ -18,6 +18,12 @@ require_relative "inc/object.graph.rb"
 require_relative "inc/object.project.rb"
 
 class Hundr
+
+  class Corpse
+
+    include CorpseHttp
+
+  end
 
   class Actions
 
@@ -27,19 +33,14 @@ class Hundr
 
       layout = Layout.new(q,En.new("hundred").to_h)
 
-      return "
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js' ></script>
-        <link rel='stylesheet' type='text/css' href='inc/style.main.css' />
-        <script src='inc/script.main.js'></script>
-        <title>Hundred Rabbits | #{$q}</title>
-      </head>
-      <body>
-        #{layout.body}
-      </body>
-      </html>"
+      corpse = Corpse.new
+      corpse.add_link("style.reset.css")
+      corpse.add_link("style.main.css")
+      corpse.add_script("jquery.core.js")
+      corpse.add_script("jquery.main.js")
+      corpse.set_title("Hundred Rabbits | #{$q}")
+      corpse.set_body(layout.body)
+      return corpse.result
 
     end
 
