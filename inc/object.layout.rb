@@ -92,6 +92,7 @@ class Layout
             <li><a href='/Sailboat' class='#{(@query == 'sailboat')?'selected':""}'>Sailboat</a></li>
             <li><a href='/Projects' class='#{(@query == 'projects')?'selected':""}'>Projects</a></li>
             <li><a href='/Roadmap' class='#{(@query == 'roadmap')?'selected':""}'>Roadmap</a></li>
+            #{(@query == 'patreons')?'<li><a href='/Roadmap' class='selected' style='color:red'>Patreons</a></li>':""}
             </ul>
         </c>"
     end
