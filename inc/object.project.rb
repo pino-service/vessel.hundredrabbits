@@ -27,7 +27,7 @@ class Project
     end
 
   	return "<c class='project'>
-  	<a href='#{@link.first.last}' target='_blank'><img src='content/project.#{@name.downcase}.jpg'/></a>
+  	<img src='content/project.#{@name.downcase}.jpg'/>
   	<p class='main'>#{@name}</p>
   	<h3>#{@bref}</h3>
   	#{@long.runes}
