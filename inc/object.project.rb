@@ -26,9 +26,8 @@ class Project
       html_links += "<a href='#{v}' target='_blank' class='external'>#{k}</a>"
     end
 
-
   	return "<c class='project'>
-  	<img src='content/project.#{@name.downcase}.jpg'/>
+  	<a href='#{@link.first.last}' target='_blank'><img src='content/project.#{@name.downcase}.jpg'/></a>
   	<p class='main'>#{@name}</p>
   	<h3>#{@bref}</h3>
   	#{@long.runes}
