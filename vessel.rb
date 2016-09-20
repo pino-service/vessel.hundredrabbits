@@ -29,17 +29,28 @@ class Hundr
 
     include ActionCollection
 
-    def http q = nil
+    def http q = "Home"
 
       layout = Layout.new(q,En.new("hundred").to_h)
 
+      # Corpse
+      
       corpse = Corpse.new
+      
+      corpse.add_meta("description","A design studio on a sailboat")
+      corpse.add_meta("keywords","sailing, patreon, indie games, design, liveaboard")
+      corpse.add_meta("viewport","width=device-width, initial-scale=1, maximum-scale=1")
+      corpse.add_meta("apple-mobile-web-app-capable","yes")
+
       corpse.add_link("style.reset.css")
       corpse.add_link("style.main.css")
+      
       corpse.add_script("jquery.core.js")
       corpse.add_script("jquery.main.js")
+      
       corpse.set_title("Hundred Rabbits | #{$q}")
       corpse.set_body(layout.body)
+      
       return corpse.result
 
     end
