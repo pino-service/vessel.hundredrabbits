@@ -25,11 +25,11 @@ class Hundr
 
   end
 
-  class Actions
+  class PassiveActions
 
     include ActionCollection
 
-    def http q = "Home"
+    def answer q = "Home"
 
       layout = Layout.new(q,En.new("hundred").to_h)
 
@@ -57,6 +57,6 @@ class Hundr
 
   end
 
-  def actions ; return Actions.new(self,self) end
+  def passive_actions ; return PassiveActions.new(self,self) end
 
 end
