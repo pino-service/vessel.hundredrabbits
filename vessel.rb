@@ -49,7 +49,7 @@ class Hundr
       corpse.add_script("jquery.main.js")
       
       corpse.set_title("Hundred Rabbits | #{$q}")
-      corpse.set_body(layout.body)
+      corpse.set_view(layout.body)
       
       return corpse.result
 
