@@ -5,12 +5,12 @@ $vessel_path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
 
 # Imports
 
-require_relative "page/home.rb"
-require_relative "page/profile.rb"
-require_relative "page/sailboat.rb"
-require_relative "page/roadmap.rb"
-require_relative "page/patreons.rb"
-require_relative "page/projects.rb" 
+require_relative "pages/home.rb"
+require_relative "pages/profile.rb"
+require_relative "pages/sailboat.rb"
+require_relative "pages/roadmap.rb"
+require_relative "pages/patreons.rb"
+require_relative "pages/projects.rb" 
 
 require_relative "object/layout.rb"
 require_relative "object/event.rb"
