@@ -31,7 +31,9 @@ class Hundr
 
     def answer q = "Home"
 
-      layout = Layout.new(q,En.new("hundred").to_h)
+      path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
+
+      layout = Layout.new(q,En.new("hundred",path).to_h)
 
       # Corpse
       
