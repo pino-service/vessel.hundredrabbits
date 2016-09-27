@@ -12,7 +12,6 @@ require_relative "pages/roadmap.rb"
 require_relative "pages/patreons.rb"
 require_relative "pages/projects.rb" 
 
-require_relative "object/layout.rb"
 require_relative "object/event.rb"
 require_relative "object/graph.rb"
 require_relative "object/project.rb"
