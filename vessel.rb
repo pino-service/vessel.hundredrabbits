@@ -5,17 +5,17 @@ $vessel_path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
 
 # Imports
 
-require_relative "inc/page.home.rb"
-require_relative "inc/page.profile.rb"
-require_relative "inc/page.sailboat.rb"
-require_relative "inc/page.roadmap.rb"
-require_relative "inc/page.patreons.rb"
-require_relative "inc/page.projects.rb" 
+require_relative "page/home.rb"
+require_relative "page/profile.rb"
+require_relative "page/sailboat.rb"
+require_relative "page/roadmap.rb"
+require_relative "page/patreons.rb"
+require_relative "page/projects.rb" 
 
-require_relative "inc/object.layout.rb"
-require_relative "inc/object.event.rb"
-require_relative "inc/object.graph.rb"
-require_relative "inc/object.project.rb"
+require_relative "object/layout.rb"
+require_relative "object/event.rb"
+require_relative "object/graph.rb"
+require_relative "object/project.rb"
 
 class Hundr
 
