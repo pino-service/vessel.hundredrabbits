@@ -12,9 +12,10 @@ require_relative "pages/roadmap.rb"
 require_relative "pages/patreons.rb"
 require_relative "pages/projects.rb" 
 
-require_relative "object/event.rb"
-require_relative "object/graph.rb"
-require_relative "object/project.rb"
+require_relative "objects/layout.rb"
+require_relative "objects/event.rb"
+require_relative "objects/graph.rb"
+require_relative "objects/project.rb"
 
 class Hundr
 
