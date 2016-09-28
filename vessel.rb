@@ -33,7 +33,7 @@ class Hundr
 
       path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
 
-      layout = Layout.new(q,En.new("hundred",path).to_h)
+      layout = Layout.new(q,En.new("timeline",path))
 
       # Corpse
       
@@ -50,8 +50,8 @@ class Hundr
       corpse.add_script("jquery.core.js")
       corpse.add_script("jquery.main.js")
       
-      corpse.set_title("Hundred Rabbits | #{$q}")
-      corpse.set_view(layout.body)
+      corpse.title = "Hundred Rabbits | #{q}"
+      corpse.body  = layout.body
       
       return corpse.result
 

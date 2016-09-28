@@ -146,7 +146,7 @@ class CircleGraph
 	  	@dayVisual = 0
 	  	@dayResearch = 0
 
-	  	$horaire.all.each do |date,log|
+	  	$horaire.to_a("log").each do |log|
 		    if $page.topic != "Horaire" && log.topic != $page.topic then next end
 
 	  		if log.sector == "audio" then @sumAudio += log.value end

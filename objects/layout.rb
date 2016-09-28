@@ -4,10 +4,7 @@ class Layout
 
         @query = query.downcase
 
-        @events = {}
-        events.each do |date,event|
-            @events[date] = Event.new(date,event)
-        end
+        @events = events.to_h("event")
 
     end
 
@@ -88,12 +85,12 @@ class Layout
     def menu
         return "<c class='menu'>
             <ul>
-            <li><a href='/Profile' class='#{(@query == 'profile')?'selected':""}'>Nomads</a></li>
-            <li><a href='/Sailboat' class='#{(@query == 'sailboat')?'selected':""}'>Sailboat</a></li>
-            <li><a href='/Projects' class='#{(@query == 'projects')?'selected':""}'>Projects</a></li>
-            <li><a href='/Roadmap' class='#{(@query == 'roadmap')?'selected':""}'>Roadmap</a></li>
-            #{(@query == 'patreons')?'<li><a href=\'/Roadmap\' class=\'selected\' style=\'color:red\'>Patreons</a></li>':""}
+            <li><a href='/Profile' class='#{(@query == 'profile') ? 'selected' : ""}'>Nomads</a></li>
+            <li><a href='/Sailboat' class='#{(@query == 'sailboat') ? 'selected' : ""}'>Sailboat</a></li>
+            <li><a href='/Projects' class='#{(@query == 'projects') ? 'selected' : ""}'>Projects</a></li>
+            <li><a href='/Roadmap' class='#{(@query == 'roadmap') ? 'selected' : ""}'>Roadmap</a></li>
+            #{(@query == 'patreons') ? '<li><a href=\'/Roadmap\' class=\'selected\' style=\'color:red\'>Patreons</a></li>' : ""}
             </ul>
         </c>"
     end
-end #{(@query == 'patreons')?'<li><a href='/Roadmap' class='selected' style='color:red'>Patreons</a></li>':""}
+end
