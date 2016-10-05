@@ -142,7 +142,7 @@ class Event
         <span class='details'>#{value}</span>
         <span class='offset'>Press</span>
       </text>
-      <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle></svg>
+      <svg class='icon'><circle cx='10.5' cy='10.5' r='3' stroke='#333' stroke-width='3'></circle></svg>
       <line class='spacer'></line>
     </event>"
   end
