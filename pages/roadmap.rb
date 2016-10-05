@@ -14,7 +14,6 @@ class Layout
 
         count = 0
         @events.sort_by{|k,to_i,v| k}.reverse.each do |date,event|
-            if event.type == "press" then next end
             if event.type == "hidden" then next end
             event.addClass( (count % 2 == 0) ? "odd" : "even" )
             html += event.template
