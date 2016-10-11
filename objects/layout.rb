@@ -1,10 +1,12 @@
 class Layout
 
+    attr_accessor :path
+
     def initialize query, events
 
         @query = query.downcase
-
         @events = events.to_h("event")
+        @path = nil
 
     end
 

@@ -4,7 +4,7 @@ class Layout
 
         html = ""
 
-        En.new("projects").to_h("project").each do |project|
+        En.new("projects",@path).to_h("project").each do |project|
             if project.is_paid then next end
             html += project.template
         end

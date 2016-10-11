@@ -34,6 +34,7 @@ class Hundr
       path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
 
       layout = Layout.new(q,En.new("timeline",path))
+      layout.path = path
 
       # Corpse
       
