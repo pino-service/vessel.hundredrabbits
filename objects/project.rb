@@ -1,10 +1,9 @@
 class Project
 
-  def initialize data
+  def initialize name,data
     
-    @data = data
-    @name = data.first
-    @content = data.last
+    @name = name
+    @content = data
     @bref = @content['BREF']
     @long = @content['LONG'].to_a
     @link = @content['LINK'].to_a
