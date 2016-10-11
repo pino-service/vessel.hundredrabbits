@@ -80,7 +80,7 @@ function initMap() {
   }
   ]);
 
-  var flightPlanCoordinates = ['+path+'];
+  var flightPlanCoordinates = ['+_path+'];
   var flightPath = new google.maps.Polyline({ path: flightPlanCoordinates, geodesic: true, strokeColor: \'#FF0000\', strokeOpacity: 1.0, strokeWeight: 2 });
 
   flightPath.setMap(map);
@@ -95,7 +95,7 @@ async defer></script>'
 
 	end
 
-	def path
+	def _path
 
 		html = ""
 
