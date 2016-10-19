@@ -16,7 +16,7 @@ class Layout
 var map;
 function initMap() {
 
-  map = new google.maps.Map(document.getElementById(\'map\'), { center: {lat: '+(@sails.last.latitude.to_s)+', lng: '+(@sails.last.longitude.to_s)+'}, zoom: 6, disableDefaultUI: true });
+  map = new google.maps.Map(document.getElementById(\'map\'), { center: {lat: '+(@sails.last.latitude.to_s)+', lng: '+(@sails.last.longitude.to_s)+'}, zoom: 7, disableDefaultUI: true });
 
   map.set(\'styles\', [
   {
