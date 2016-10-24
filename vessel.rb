@@ -1,7 +1,7 @@
 #!/bin/env ruby
 # encoding: utf-8
 
-$vessel_path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
+$nataniev.require("corpses","http")
 
 # Imports
 
@@ -19,21 +19,23 @@ require_relative "objects/project.rb"
 
 class Hundr
 
+  include Vessel
+
   class Corpse
 
     include CorpseHttp
 
   end
 
-  class PassiveActions
+  class Actions
 
     include ActionCollection
 
-    def answer q = "Home"
+    def serve q = "Home"
 
       path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
 
-      layout = Layout.new(q,En.new("timeline",path))
+      layout = Layout.new(q,Memory_Hash.new("timeline",path))
       layout.path = path
 
       # Corpse
@@ -60,6 +62,6 @@ class Hundr
 
   end
 
-  def passive_actions ; return PassiveActions.new(self,self) end
+  def actions ; return Actions.new(self,self) end
 
 end
