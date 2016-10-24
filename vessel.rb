@@ -1,7 +1,7 @@
 #!/bin/env ruby
 # encoding: utf-8
 
-$nataniev.require("corpses","http")
+$nataniev.require("corpse","http")
 
 # Imports
 
@@ -17,7 +17,7 @@ require_relative "objects/event.rb"
 require_relative "objects/graph.rb"
 require_relative "objects/project.rb"
 
-class Hundr
+class Hundredrabbits
 
   include Vessel
 
