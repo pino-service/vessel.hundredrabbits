@@ -3,7 +3,22 @@
 
 $nataniev.require("corpse","http")
 
-# Imports
+class VesselHundredrabbits
+
+  include Vessel
+
+  def initialize id = 0
+
+    super
+
+    @name = "Hundred Rabbits"
+    @path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
+
+    install(:default,:serve)
+
+  end
+
+end
 
 require_relative "pages/home.rb"
 require_relative "pages/profile.rb"
@@ -17,51 +32,43 @@ require_relative "objects/event.rb"
 require_relative "objects/graph.rb"
 require_relative "objects/project.rb"
 
-class Hundredrabbits
+class ActionServe
 
-  include Vessel
+  include Action
 
-  class Corpse
+  def act q = "Home"
 
-    include CorpseHttp
+    layout = Layout.new(q,Memory_Hash.new("timeline",@host.path))
+    layout.path = @host.path
 
-  end
-
-  class Actions
-
-    include ActionCollection
-
-    def serve q = "Home"
-
-      path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
-
-      layout = Layout.new(q,Memory_Hash.new("timeline",path))
-      layout.path = path
-
-      # Corpse
-      
-      corpse = Corpse.new
-      
-      corpse.add_meta("description","A design studio on a sailboat")
-      corpse.add_meta("keywords","sailing, patreon, indie games, design, liveaboard")
-      corpse.add_meta("viewport","width=device-width, initial-scale=1, maximum-scale=1")
-      corpse.add_meta("apple-mobile-web-app-capable","yes")
-
-      corpse.add_link("style.reset.css")
-      corpse.add_link("style.main.css")
-      
-      corpse.add_script("jquery.core.js")
-      corpse.add_script("jquery.main.js")
-      
-      corpse.title = "Hundred Rabbits | #{q}"
-      corpse.body  = layout.body
-      
-      return corpse.result
-
-    end
+    # Corpse
+    
+    corpse = CorpseHttp.new(@host,q)
+    
+    corpse.title = "Hundred Rabbits | #{q}"
+    corpse.body  = layout.body
+    
+    return corpse.result
 
   end
 
-  def actions ; return Actions.new(self,self) end
+end
+
+class CorpseHttp
+
+  def build
+
+    add_meta("description","A design studio on a sailboat")
+    add_meta("keywords","sailing, patreon, indie games, design, liveaboard")
+    add_meta("viewport","width=device-width, initial-scale=1, maximum-scale=1")
+    add_meta("apple-mobile-web-app-capable","yes")
+
+    add_link("style.reset.css")
+    add_link("style.main.css")
+    
+    add_script("jquery.core.js")
+    add_script("jquery.main.js")
+
+  end
 
 end
