@@ -12,6 +12,11 @@
     32.231361, -117.228893
     32.532892, -117.239879
 
+2016-10-29
+  TYPE : expense
+  NAME : Outboard Engine
+  VLUE : -850
+
 2016-10-17
   TYPE : sail
   NAME : San Diego
@@ -75,11 +80,6 @@
 2016-09-12
   TYPE : hidden
   NAME : Changed secondary filter
-
-2016-09-10
-  TYPE : expense
-  NAME : Outboard Engine
-  VLUE : -250
 
 2016-09-09
   TYPE : expense
