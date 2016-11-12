@@ -11,9 +11,20 @@ class Project
 
   end
 
-  def is_paid
+  def is_store
 
-    if @paid == "YES" then return true end
+    @link.each do |k,v|
+      if k.like("store") then return true end
+    end
+    return nil
+
+  end
+
+  def is_patreon
+
+    @link.each do |k,v|
+      if k.like("patreons") then return true end
+    end
     return nil
 
   end

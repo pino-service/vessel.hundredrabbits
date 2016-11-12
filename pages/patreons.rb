@@ -5,7 +5,7 @@ class Layout
         html = ""
 
         Memory_Hash.new("projects",@path).to_h("project").each do |name,project|
-            if !project.is_paid then next end
+            if !project.is_patreon then next end
             html += project.template
         end
 

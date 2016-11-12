@@ -78,6 +78,7 @@ class Layout
         elsif @query == "profile" then html += page_profile
         elsif @query == "patreons" then html += page_patreons
         elsif @query == "projects" then html += page_projects
+        elsif @query == "store" then html += page_store
         else html += page_home end
 
         return "#{header}#{menu}#{html}#{footer}"
@@ -89,8 +90,10 @@ class Layout
             <ul>
             <li><a href='/Profile' class='#{(@query == 'profile') ? 'selected' : ""}'>Nomads</a></li>
             <li><a href='/Sailboat' class='#{(@query == 'sailboat') ? 'selected' : ""}'>Sailboat</a></li>
-            <li><a href='/Projects' class='#{(@query == 'projects') ? 'selected' : ""}'>Projects</a></li>
             <li><a href='/Roadmap' class='#{(@query == 'roadmap') ? 'selected' : ""}'>Roadmap</a></li>
+            
+            <li><a href='/Projects' class='#{(@query == 'projects') ? 'selected' : ""}'>Projects</a></li>
+            <li><a href='/Store' class='#{(@query == 'store') ? 'selected' : ""}'>Store</a></li>
             #{(@query == 'patreons') ? '<li><a href=\'/Roadmap\' class=\'selected\' style=\'color:red\'>Patreons</a></li>' : ""}
             </ul>
         </c>"
