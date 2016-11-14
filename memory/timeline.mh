@@ -7,6 +7,11 @@
   NAME : Capsule 3
   LINK : https://www.youtube.com/watch?v=FAmGmuUEhww
 
+2016-11-07
+  TYPE : expense
+  NAME : Outboard Engine
+  VLUE : -850
+
 2016-11-05
   TYPE : video
   NAME : Episode 10
@@ -21,11 +26,6 @@
     31.807532, -116.794933
     32.231361, -117.228893
     32.532892, -117.239879
-
-2016-10-29
-  TYPE : expense
-  NAME : Outboard Engine
-  VLUE : -850
 
 2016-10-17
   TYPE : sail
