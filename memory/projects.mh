@@ -8,7 +8,6 @@ OQUONIE
     & Oquonie is a textless puzzle game for iPad and iPhone that was released in february 2014 where you must find your way across an intertwined megastructure. You will not be alone, your incarnations will have the help of bizaroid characters speaking an obscure language.
   LINKOquonie
     Store : https://itunes.apple.com/us/app/oquonie/id819777958?mt=8
-    Patreons : X
 
 MARKLE
   BREF : Get out of the pattern.
@@ -36,7 +35,6 @@ SOUNDTRACK
   LONG
     & The music in our monthly videos are composed by Aliceffekt, each track is different and comes with ableton source files. We also produce podcasts, sailing stories narrated by Rekka Bell.
   LINK
-    Store : X
     Patreons : https://www.patreon.com/posts/hundred-rabbit-5113271
 
 STICKERS
@@ -44,7 +42,6 @@ STICKERS
   LONG
     &  Oquonie character stickers, the hundredrabbits logo, the grim grains logo and more.
   LINK
-    Store : X
     Patreons : https://www.patreon.com/posts/oquonie-stickers-6783611
 
 OQUONIE WALKTHROUGH
@@ -52,7 +49,6 @@ OQUONIE WALKTHROUGH
   LONG
     & The Oquonie walkthrough is a playable book version of the iOS game. It is currently out of print, and only available as a PDF.
   LINK
-    Store : X
     Patreons : https://www.patreon.com/posts/oquonie-4494388
 
 APPAREL
@@ -63,9 +59,9 @@ APPAREL
     Store : https://society6.com/hundredrabbits
 
 RONIN
-  BREF : Ronin is our graphic and design tool. It is meant to be used to create simple graphics and sprites.
+  BREF : Ronin is a command-line based visual editor used to create our graphics and designs tool.
   LONG
-    & The application is currently under development.
+    & It uses little power, is open-source and works across all of our devices.
   LINK
     Github : https://github.com/hundredrabbits/ronin
 
