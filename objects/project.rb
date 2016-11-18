@@ -37,7 +37,7 @@ class Project
     end
 
   	return "<c class='project'>
-  	<img src='content/project.#{@name.downcase}.jpg'/>
+  	<img src='content/project.#{@name.downcase.gsub(' ','.')}.jpg'/>
   	<p class='main'>#{@name}</p>
   	<h3>#{@bref}</h3>
   	#{@long.runes}
