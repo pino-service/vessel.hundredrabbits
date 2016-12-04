@@ -13,8 +13,11 @@ class VesselHundredrabbits
 
     @name = "Hundred Rabbits"
     @path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
+    @docs = "The Hundred Rabbits website toolchain."
 
-    install(:default,:serve)
+    install(:custom,:serve)
+    install(:generic,:help)
+    install(:generic,:document)
 
   end
 
@@ -36,6 +39,15 @@ require_relative "objects/project.rb"
 class ActionServe
 
   include Action
+  
+  def initialize q = nil
+
+    super
+
+    @name = "Serve"
+    @docs = "Deliver the Hundred Rabbits website."
+
+  end
 
   def act q = "Home"
 
