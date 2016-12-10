@@ -2,6 +2,21 @@
 ~ NOTE : Hundred Rabbits
 ~ AUTH : Devine Lu Linvega & Rekka Bellum
 
+2016-11-01
+  TYPE : sail
+  NAME : La Paz
+  VLUE : 840
+  POSI
+    23.154169, -109.307240
+    22.805220, -109.746693
+    22.800156, -110.098256
+    25.721893, -113.918751
+    27.347295, -114.994038
+    27.666955, -114.866236
+    27.950472, -115.736673
+    31.537321, -116.759775
+    31.758275, -116.773508
+
 2016-11-14
   TYPE : video
   NAME : Capsule 3
@@ -41,7 +56,7 @@
   TYPE : sail
   NAME : Los Angeles
   VLUE : 350
-  TEXT : Had a lot of trouble with our engine, kept overheating. We fixed in in San Luis Obispo thankfully. We sailed around Point Conception, as always, there was no wind. Dolphins escorted us to LA, it was amazing. 
+  TEXT : Had a lot of trouble with our engine, kept overheating. We fixed in in San Luis Obispo thankfully. We sailed around Point Conception, as always, there was no wind. Dolphins escorted us to LA, it was amazing.
   POSI
     33.978115, -118.448950
     34.104236, -119.314482
@@ -130,7 +145,7 @@
   TYPE : sail
   NAME : San Francisco
   VLUE : 700
-  TEXT : Arrived on the evening of the 25th. We sailed 700nm, in heavy fog and cold, through pods of whales and high seas. We rounded the dreaded Cape Mendocino with ease, and cautiously crossed the bars to Newport, Fort Bragg and San Francisco. The trip cost us our Gennaker, torn to shreds by gusting winds. Our auto-pilot also died 100nm from San Francisco, we hand-steered the rest of the way. 
+  TEXT : Arrived on the evening of the 25th. We sailed 700nm, in heavy fog and cold, through pods of whales and high seas. We rounded the dreaded Cape Mendocino with ease, and cautiously crossed the bars to Newport, Fort Bragg and San Francisco. The trip cost us our Gennaker, torn to shreds by gusting winds. Our auto-pilot also died 100nm from San Francisco, we hand-steered the rest of the way.
   POSI
     37.808156, -122.411203
     37.991292, -123.824320
@@ -157,7 +172,7 @@
   TYPE : sail
   NAME : Maple Bay
   VLUE : 38
-  TEXT : Had amazing wind coming over to Vancouver Island, we arrived in record speed. Decided to take a route to samsum narrows to stop at Maple Bay for our laundry. 
+  TEXT : Had amazing wind coming over to Vancouver Island, we arrived in record speed. Decided to take a route to samsum narrows to stop at Maple Bay for our laundry.
   POSI
     48.802228, -123.601410
 
