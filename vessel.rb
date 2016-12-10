@@ -3,26 +3,6 @@
 
 $nataniev.require("corpse","http")
 
-class VesselHundredrabbits
-
-  include Vessel
-
-  def initialize id = 0
-
-    super
-
-    @name = "Hundred Rabbits"
-    @path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
-    @docs = "The Hundred Rabbits website toolchain."
-
-    install(:custom,:serve)
-    install(:generic,:help)
-    install(:generic,:document)
-
-  end
-
-end
-
 require_relative "pages/home.rb"
 require_relative "pages/profile.rb"
 require_relative "pages/sailboat.rb"
@@ -36,32 +16,22 @@ require_relative "objects/event.rb"
 require_relative "objects/graph.rb"
 require_relative "objects/project.rb"
 
-class ActionServe
+class VesselHundredrabbits
 
-  include Action
-  
-  def initialize q = nil
+  include Vessel
+
+  def initialize id = 0
 
     super
 
-    @name = "Serve"
-    @docs = "Deliver the Hundred Rabbits website."
+    @name = "Hundred Rabbits"
+    @path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
+    @docs = "The Hundred Rabbits website toolchain."
 
-  end
-
-  def act q = "Home"
-
-    layout = Layout.new(q,Memory_Hash.new("timeline",@host.path))
-    layout.path = @host.path
-
-    # Corpse
-    
-    corpse = CorpseHttp.new(@host,q)
-    
-    corpse.title = "Hundred Rabbits | #{q}"
-    corpse.body  = layout.body
-    
-    return corpse.result
+    install(:custom,:serve)
+    install(:custom,:satellite)
+    install(:generic,:help)
+    install(:generic,:document)
 
   end
 
