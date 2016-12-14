@@ -40,7 +40,7 @@ class Graph
 		return timeDiff.to_s+" days ago"
 	end
 
-	def equalSegments 
+	def equalSegments
 
 		segments = segmentMemory
 
@@ -164,32 +164,32 @@ class CircleGraph
 
 	def graph
 
-		graph = ""
-	  	strokeWidth = 20
-		circleRadius = 15
-	  	circumference = 2 * Math::PI * circleRadius
-	  	graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='black' stroke-width='#{strokeWidth}' fill='none' />"
-
-	  	# Audio
-	  	strokeLength = (@sumAudio/@sumAll.to_f) * circumference
-	  	strokeRemain = circumference - strokeLength
-
-	  	graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='#72dec2' stroke-width='1' fill='none' stroke-dasharray='"+strokeLength.to_s+" "+strokeRemain.to_s+"' />"
-
-	  	# Visual
-	  	strokeLength = (@sumVisual/@sumAll.to_f) * circumference
-	  	strokeRemain = circumference - strokeLength
-	  	angle = (@sumAudio/@sumAll.to_f) * 360
-
-	  	graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='#ff0000' stroke-width='1' fill='none' stroke-dasharray='"+strokeLength.to_s+" "+strokeRemain.to_s+"' transform='rotate("+angle.to_s+" "+circleRadius.to_s+" "+circleRadius.to_s+")' />"
-
-		# Research
-	  	strokeLength = (@sumResearch/@sumAll.to_f) * circumference
-	  	strokeRemain = circumference - strokeLength
-	  	angle = ((@sumAudio+@sumVisual)/@sumAll.to_f) * 360
-
-	  	graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='#fff' stroke-width='1' fill='none' stroke-dasharray='"+strokeLength.to_s+" "+strokeRemain.to_s+"' transform='rotate("+angle.to_s+" "+circleRadius.to_s+" "+circleRadius.to_s+")' />"
-	  	return "<svg style='width:"+(circleRadius*2).to_s+"px; height:"+(circleRadius*2).to_s+"px; padding:#{strokeWidth/2}px;'>#{graph}</svg>"
+    graph = ""
+    strokeWidth = 20
+    circleRadius = 15
+    circumference = 2 * Math::PI * circleRadius
+    graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='black' stroke-width='#{strokeWidth}' fill='none' />"
+    
+    # Audio
+    strokeLength = (@sumAudio/@sumAll.to_f) * circumference
+    strokeRemain = circumference - strokeLength
+    
+    graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='#72dec2' stroke-width='1' fill='none' stroke-dasharray='"+strokeLength.to_s+" "+strokeRemain.to_s+"' />"
+    
+    # Visual
+    strokeLength = (@sumVisual/@sumAll.to_f) * circumference
+    strokeRemain = circumference - strokeLength
+    angle = (@sumAudio/@sumAll.to_f) * 360
+    
+    graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='#ff0000' stroke-width='1' fill='none' stroke-dasharray='"+strokeLength.to_s+" "+strokeRemain.to_s+"' transform='rotate("+angle.to_s+" "+circleRadius.to_s+" "+circleRadius.to_s+")' />"
+    
+    # Research
+    strokeLength = (@sumResearch/@sumAll.to_f) * circumference
+    strokeRemain = circumference - strokeLength
+    angle = ((@sumAudio+@sumVisual)/@sumAll.to_f) * 360
+    
+    graph += "<circle cx='"+circleRadius.to_s+"' cy='"+circleRadius.to_s+"' r='"+circleRadius.to_s+"' stroke='#fff' stroke-width='1' fill='none' stroke-dasharray='"+strokeLength.to_s+" "+strokeRemain.to_s+"' transform='rotate("+angle.to_s+" "+circleRadius.to_s+" "+circleRadius.to_s+")' />"
+    return "<svg style='width:"+(circleRadius*2).to_s+"px; height:"+(circleRadius*2).to_s+"px; padding:#{strokeWidth/2}px;'>#{graph}</svg>"
 
 	end
 

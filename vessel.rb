@@ -24,7 +24,7 @@ class VesselHundredrabbits
 
     super
 
-    @name = "Hundred Rabbits"
+    @name = "HundredRabbits"
     @path = File.expand_path(File.join(File.dirname(__FILE__), "/"))
     @docs = "The Hundred Rabbits website toolchain."
 
@@ -52,6 +52,12 @@ class CorpseHttp
     add_script("jquery.core.js")
     add_script("jquery.main.js")
 
+  end
+  
+  def body
+    return "We'll be back soon.<br />
+    We're upgrading our website :)
+    "
   end
 
 end
