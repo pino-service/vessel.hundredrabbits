@@ -1,14 +1,25 @@
-class Layout
+class Google_Map
 
-	def page_home
+  def initialize events
+    
+    @events = events
+    @sails = find_sails
+    
+  end
+  
+  def find_sails
+    
+    sails = []
+    @events.sort_by{|k,to_i,v| k}.each do |date,event|
+      if event.type != "sail" then next end
+      sails.push(event)
+    end
+    
+    return sails
+    
+  end
 
-		@sails = eventsOfType("sail").reverse
-
-		return map+""
-
-	end
-
-	def map
+	def to_s
 
 		return '<div id="map" style="height:100vh"></div>
 
@@ -103,13 +114,14 @@ async defer></script>'
       event.geolocation.each do |position|
         lat = position.split(",").first.strip.to_f
         lon = position.split(",").last.strip.to_f
-        html += "{lat: #{lat}, lng: #{lon}}," 
+        html += "{lat: #{lat}, lng: #{lon}},"
       end
 		end
 
 		html = html[0,html.length-1]
 
 		return html
+		
 	end
 
 end
