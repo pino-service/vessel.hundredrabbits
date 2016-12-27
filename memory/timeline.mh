@@ -2,6 +2,22 @@
 ~ NOTE : Hundred Rabbits
 ~ AUTH : Devine Lu Linvega & Rekka Bellum
 
+2016-12-27
+  TYPE : expense
+  NAME : Generator
+  VLUE : -1100
+
+2016-12-26
+  TYPE : video
+  NAME : Episode 12
+  LINK : https://www.youtube.com/watch?v=nnwfAlhzwEo
+
+2016-12-18
+  TYPE : podcast
+  NAME : Our Downstairs Neighbor
+  LINK : https://www.youtube.com/watch?v=LTuZCPWjg8o
+  TEXT : Story about our downstairs neighbor Calcifer.
+
 2016-12-05
   TYPE : sail
   NAME : La Paz
@@ -22,6 +38,11 @@
     27.950472, -115.736673
     31.537321, -116.759775
     31.758275, -116.773508
+
+2016-11-28
+  TYPE : video
+  NAME : Episode 11
+  LINK : https://www.youtube.com/watch?v=xn5096EsYD4
 
 2016-11-14
   TYPE : video
@@ -355,10 +376,6 @@
     47.808519, -122.389145
     47.624179, -122.444917
 
-2016-06-01
-  TYPE : patreon
-  NAME : June
-
 2016-05-30
   TYPE : sail
   NAME : Shilshole Bay
@@ -510,11 +527,6 @@
   POSI
     48.845235, -123.489626
 
-2016-05-01
-  TYPE : patreon
-  NAME : May
-  VLUE : 1101.011
-
 2016-04-30
   TYPE : sail
   NAME : Clam Bay
@@ -618,11 +630,6 @@
   POSI
     48.453803, -123.293562
 
-2016-04-01
-  TYPE : patreon
-  NAME : April
-  VLUE : 1053.25
-
 2016-03-31
   TYPE : sail
   NAME : Sidney Spit
@@ -664,11 +671,6 @@
   VLUE : -619.00
   TEXT : Found Mardon, a company that insures liveaboards
 
-2016-03-01
-  TYPE : patreon
-  NAME : March
-  VLUE : 983.72
-
 2016-02-24
   TYPE : expense
   NAME : Sales Tax
@@ -694,11 +696,6 @@
   NAME : Inspection
   VLUE : -528.00
   LINK : https://www.patreon.com/posts/4196830
-
-2016-02-01
-  TYPE : patreon
-  NAME : February
-  VLUE : 959.00
 
 2016-01-29
   TYPE : expense
@@ -731,11 +728,6 @@
   NAME : Leaving Party
   LINK : https://www.facebook.com/events/696266160509400/
 
-2016-01-01
-  TYPE : patreon
-  NAME : January
-  VLUE : 821.00
-
 2015-12-11
   TYPE : press
   NAME : Motherboard Feature
@@ -755,4 +747,3 @@
   TYPE : first
   NAME : Founded HundredRabbits
   LINK : https://www.patreon.com/100
-
