@@ -118,6 +118,8 @@ class Event
     if type == "first" then return template_first end
     if type == "press" then return template_press end
     if type == "podcast" then return template_podcast end
+    if type == "profile" then return template_profile end
+    if type == "sailboat" then return template_sailboat end
     return template_missing
   end
 
@@ -259,6 +261,48 @@ class Event
       </text>
       <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/></svg>
       <line class='spacer'></line>
+    </event>"
+  end
+
+  def template_profile
+    return "
+    <event time='#{time}' class='#{type}'>
+      #{Media.new("content","profile.main")}
+      <ul class='left'>
+          <li><b>Devine Lu Linvega</b></li>
+          <li>1986.03</li>
+          <li>Developer</li>
+          <li>English, French, Russian</li>
+          <li><a href='https://twitter.com/neauoire' target='_blank'>@neauoire</a></li>
+      </ul>
+      <ul class='right'>
+          <li><b>Rekka Bellum</b></li>
+          <li>1984.12</li>
+          <li>Illustrator</li>
+          <li>English, French, Japanese</li>
+          <li><a href='https://twitter.com/rekkabell' target='_blank'>@rekkabell</a></li>
+      </ul>
+    </event>"
+  end
+
+  def template_sailboat
+    return "
+    <event time='#{time}' class='#{type}'>
+      #{Media.new("content","sailboat.main")}
+      <ul class='left'>
+          <li><b>Yamaha</b></li>
+          <li>Length 33ft(10.16m)</li>
+          <li>Built 1982</li>
+          <li>Engine 13HP</li>
+          <li><a href='https://github.com/hundredrabbits/Yamaha-33/blob/master/README.md' target='_blank'>Read more</a></li>
+      </ul>
+      <ul class='right'>
+          <li><b>Tall Rig</b></li>
+          <li>Hull Fiberglass</li>
+          <li>Draft 6.25ft(1.91m)</li>
+          <li>Keel Fin</li>
+          <li><a href='https://twitter.com/rekkabell' target='_blank'>@rekkabell</a></li>
+      </ul>
     </event>"
   end
 
