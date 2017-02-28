@@ -97,8 +97,18 @@ function initMap() {
   flightPath.setMap(map);
 
   var myLatLng = {lat: '+@sails.last.latitude.to_s+', lng: '+@sails.last.longitude.to_s+'};
-  var marker = new google.maps.Marker({ position: myLatLng, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'red\', scale: 2, strokeWeight: 2 }, draggable: false, map: map });
-
+  var pos_polynesia = {lat: -8.826494, lng: -140.142672};
+  var pos_tokyo = {lat: 35.626411, lng: 139.776893};
+  var pos_auckland = {lat: -36.841539, lng: 174.761052};
+  var pos_vladivostok = {lat: 43.114753, lng: 131.872834};
+  var pos_vladivostok = {lat: 48.802228, lng: -123.601410};
+  var marker = new google.maps.Marker({ position: myLatLng, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'red\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
+  var marker2 = new google.maps.Marker({ position: pos_polynesia, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
+  var marker_tokyo = new google.maps.Marker({ position: pos_tokyo, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
+  var marker_auckland = new google.maps.Marker({ position: pos_auckland, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
+  var marker_vladivostok = new google.maps.Marker({ position: pos_vladivostok, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
+  var marker_vancouver = new google.maps.Marker({ position: pos_vancouver, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
+  
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Xytok8C1LF183ydZ3mpjflPTgx835e4&callback=initMap"

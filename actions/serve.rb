@@ -58,9 +58,11 @@ class CorpseHttp
     
     logo = "<div id='logo' style='width:120px;height:120px; margin:15vh auto; background:none'></div>
     <script type='text/javascript' charset='utf-8' src='public.hundredrabbits/scripts/drool.js'></script>"
+
+    menu = "<c class='menu'><a href='#map'>View Map</a> <a href='https://hundredrabbits.itch.io' target='_blank'>Games</a> <a href='https://www.youtube.com/playlist?list=PLV-JXZPiMUdtBGYfvbp9M7N0Tc15GMqy1' target='_blank'>Videos</a></c>"
     
     html += Google_Map.new(events).to_s
-    html += "<overlay>#{logo}#{status}#{timeline}</overlay>"
+    html += "<overlay>#{logo}#{menu}#{status}#{timeline}</overlay>"
     
     return html
     
@@ -87,7 +89,6 @@ class CorpseHttp
   def format_money int
 
     int = "#{int}"
-
     return "#{int[0,int.length-3]}'#{int[-3,3]}$"
 
   end

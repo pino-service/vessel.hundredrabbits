@@ -301,7 +301,7 @@ class Event
           <li>Hull Fiberglass</li>
           <li>Draft 6.25ft(1.91m)</li>
           <li>Keel Fin</li>
-          <li></li>
+          <li>_</li>
       </ul>
     </event>"
   end
