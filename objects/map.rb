@@ -25,71 +25,11 @@ class Google_Map
 
 <script>
 var map;
-function initMap() {
-
+function initMap()
+{
   map = new google.maps.Map(document.getElementById(\'map\'), { center: {lat: '+(@sails.last.latitude.to_s)+', lng: '+(@sails.last.longitude.to_s)+'}, zoom: 8, disableDefaultUI: true });
 
-  map.set(\'styles\', [
-  {
-  "featureType": "water",
-  "elementType": "geometry",
-  "stylers": [
-  { "color": "#000000" }
-  ]
-  },{
-  "featureType": "landscape",
-  "stylers": [
-  { "color": "#222222" }
-  ]
-  },{
-  "featureType": "transit",
-  "stylers": [
-  { "visibility": "off" }
-  ]
-  },{
-  "featureType": "road",
-  "stylers": [
-  { "visibility": "off" }
-  ]
-  },{
-  "featureType": "poi",
-  "stylers": [
-  { "visibility": "off" }
-  ]
-  },{
-  "featureType": "administrative",
-  "stylers": [
-  { "visibility": "off" }
-  ]
-  },{
-  "featureType": "water",
-  "elementType": "labels.text.fill",
-  "stylers": [
-  { "visibility": "on" },
-  { "color": "#222222" }
-  ]
-  },{
-  "featureType": "landscape",
-  "elementType": "labels",
-  "stylers": [
-  { "color": "#555555" },
-  { "visibility": "simplified" }
-  ]
-  },{
-  "featureType": "road",
-  "elementType": "geometry.stroke",
-  "stylers": [
-  { "visibility": "on" },
-  { "weight": 0.1 },
-  { "color": "#111111" }
-  ]
-  },{
-  "elementType": "labels.text.stroke",
-  "stylers": [
-  { "visibility": "off" }
-  ]
-  }
-  ]);
+  '+_styles+'
 
   var flightPlanCoordinates = ['+_path+'];
   var flightPath = new google.maps.Polyline({ path: flightPlanCoordinates, geodesic: true, strokeColor: \'#FF0000\', strokeOpacity: 1.0, strokeWeight: 2 });
@@ -97,6 +37,7 @@ function initMap() {
   flightPath.setMap(map);
 
   var myLatLng = {lat: '+@sails.last.latitude.to_s+', lng: '+@sails.last.longitude.to_s+'};
+  
   var pos_polynesia = {lat: -8.826494, lng: -140.142672};
   var pos_tokyo = {lat: 35.626411, lng: 139.776893};
   var pos_auckland = {lat: -36.841539, lng: 174.761052};
@@ -107,8 +48,7 @@ function initMap() {
   var marker_tokyo = new google.maps.Marker({ position: pos_tokyo, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
   var marker_auckland = new google.maps.Marker({ position: pos_auckland, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
   var marker_vladivostok = new google.maps.Marker({ position: pos_vladivostok, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
-  var marker_vancouver = new google.maps.Marker({ position: pos_vancouver, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map });
-  
+  var marker_vancouver = new google.maps.Marker({ position: pos_vancouver, icon: { path: google.maps.SymbolPath.CIRCLE, strokeColor: \'white\', scale: 2, strokeWeight: 0, fillOpacity: 1, fillColor:\'white\' }, draggable: false, map: map }); 
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8Xytok8C1LF183ydZ3mpjflPTgx835e4&callback=initMap"
@@ -133,5 +73,52 @@ async defer></script>'
 		return html
 		
 	end
+
+  def _styles
+
+    return '
+map.set(\'styles\', [
+  {
+    "featureType": "water",
+    "elementType": "geometry",
+    "stylers": [{ "color": "#000000" }]
+  },{
+    "featureType": "landscape",
+    "stylers": [{ "color": "#222222" }]
+  },{
+    "featureType": "transit",
+    "stylers": [{ "visibility": "off" }
+  ]
+  },{
+    "featureType": "road",
+    "stylers": [{ "visibility": "off" }
+  ]
+  },{
+    "featureType": "poi",
+    "stylers": [{ "visibility": "off" }
+  ]
+  },{
+    "featureType": "administrative",
+    "stylers": [{ "visibility": "off" }
+  ]
+  },{
+    "featureType": "water",
+    "elementType": "labels.text.fill",
+    "stylers": [{ "visibility": "on" },{ "color": "#222222" }]
+  },{
+    "featureType": "landscape",
+    "elementType": "labels",
+    "stylers": [{ "color": "#555555" },{ "visibility": "simplified" }]
+  },{
+    "featureType": "road",
+    "elementType": "geometry.stroke",
+    "stylers": [{ "visibility": "on" },{ "weight": 0.1 },{ "color": "#111111" }]
+  },{
+    "elementType": "labels.text.stroke",
+    "stylers": [{ "visibility": "off" }]
+  }
+  ]);'
+
+  end
 
 end

@@ -1,0 +1,20 @@
+~ NAME : Waypoints
+~ NOTE : Hundred Rabbits
+~ AUTH : Devine Lu Linvega
+
+MARKERS
+  Nukuhiva
+    lat: -8.826494
+    lng: -140.142672
+  Tokyo
+    lat: 35.626411
+    lng: 139.776893
+  Auckland
+    lat: -36.841539
+    lng: 174.761052
+  Vladivostok
+    lat: 43.114753
+    lng: 131.872834
+  Vancouver
+    lat: 48.802228
+    lng: -123.601410
