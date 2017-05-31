@@ -152,12 +152,13 @@ class Event
   def template_release
     return "
     <event time='#{time}' class='#{type} #{@extraClasses}'>
+      <a href='#{url}' target='_blank'>#{Media.new("content","release."+@title.gsub(" ",".").downcase)}</a>
       <text>
-        <span class='title'>#{title} Release</span>
+        <span class='title'><a href='#{url}' target='_blank'>#{title}</a></span>
         <span class='details'>#{value}</span>
         <span class='offset'>#{offset}</span>
       </text>
-      <svg class='icon'><circle cx='10.5' cy='10.5' r='3' fill='#fff'></circle><circle cx='10.5' cy='10.5' r='5' fill='none' stroke='white' stroke-width='1px'></circle></svg>
+      <svg class='icon'><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align + 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align + 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/><line x1='#{@icon_align}' y1='#{@icon_align - 4}' x2='#{@icon_align - 4}' y2='#{@icon_align}'/></svg>
       <line class='spacer'></line>
     </event>"
   end

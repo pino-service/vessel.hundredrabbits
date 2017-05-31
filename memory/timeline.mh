@@ -2,6 +2,11 @@
 ~ NOTE : Hundred Rabbits
 ~ AUTH : Devine Lu Linvega & Rekka Bellum
 
+2017-05-29
+  TYPE : release
+  NAME : Thousand Rooms
+  LINK : https://hundredrabbits.itch.io/thousand-rooms
+
 2017-05-13
   TYPE : video
   NAME : Season 2 Episode 4
@@ -9,7 +14,7 @@
 
 2017-05-02
   TYPE : sail
-  NAME : Papette
+  NAME : Papeete
   VLUE : 210
   POSI
      -17.575373, -149.620775
@@ -103,7 +108,7 @@
   NAME : Season 2 Episode 1
   LINK : https://www.youtube.com/watch?v=GcNTVeSvB2s
 
-2015-01-07
+2017-01-07
   TYPE : release
   NAME : Donsol
   LINK : https://hundredrabbits.itch.io/donsol
@@ -117,6 +122,10 @@
   TYPE : video
   NAME : Season 1 Episode 12
   LINK : https://www.youtube.com/watch?v=nnwfAlhzwEo
+
+2016-12-24
+  TYPE : release
+  NAME : Oquonie
 
 2016-12-23
   TYPE : maintenance
@@ -859,10 +868,6 @@
   TYPE : expense
   NAME : GoPro Camera
   VLUE : -410.00
-
-2015-11-29
-  TYPE : release
-  NAME : Oquonie Apple TV
 
 2015-11-02
   TYPE : profile
