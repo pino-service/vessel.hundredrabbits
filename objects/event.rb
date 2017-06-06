@@ -1,7 +1,11 @@
 class Event
 
+  attr_accessor :type
+  attr_accessor :time
+
   def initialize(date,data)
     @date = date
+    @time  = Timestamp.new(@date)
     @type = data["TYPE"]
     @title = data["NAME"]
     @value = data["VLUE"]
@@ -66,12 +70,8 @@ class Event
     return @date.split("-")[2].to_i
   end
 
-  def time
-    return Date.new(year,month,day).to_time.to_i
-  end
-
   def elapsed
-    return Time.new.to_i - time
+    return @time.elapsed
   end
 
   def offset
@@ -305,6 +305,12 @@ class Event
           <li>_</li>
       </ul>
     </event>"
+  end
+
+  def to_s
+
+    return "#{date} -> #{type} : #{title}"
+
   end
 
 end

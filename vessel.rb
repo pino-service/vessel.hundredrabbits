@@ -15,7 +15,8 @@ class VesselHundredrabbits
     @site = "http://100r.co"
 
     install(:custom,:serve)
-    install(:custom,:satellite)
+    install(:custom,:get_location)
+    install(:custom,:get_position)
     install(:generic,:help)
     install(:generic,:document)
 

@@ -7,6 +7,7 @@ The Hundred Rabbits website toolchain.
 ```
 Custom
   Serve          | Deliver the Hundred Rabbits website.
+  Get_Location   | Return latest location.
 Generic
   Help           | List available commands.
   Document       | Generate the Github documentation file.
@@ -14,7 +15,7 @@ Generic
 
 ## Documentation
 
-Generated with [Nataniev](http://wiki.xxiivv.com/Nataniev) on **Hexesamber 10, 2017**, view the [project site](http://100r.co).
+Generated with [Nataniev](http://wiki.xxiivv.com/Nataniev) on **Hexesamber 14, 2017**, view the [project site](http://100r.co).
 
 ##License
 
