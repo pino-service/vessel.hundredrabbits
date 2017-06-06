@@ -80,7 +80,7 @@ class CorpseHttp
         if event.type == "expense" then expenses += event.value.to_f end
     end
 
-    html += "<h2>Sailed #{distance.to_i}nm<small>#{(distance.to_f/@events['2015-11-01'].offset_months.to_f).to_i}nm per month</small></h2> <h2>Spent #{format_money(expenses.to_i * -1)}<small>#{format_money((expenses.to_i * -1)/@events['2015-11-01'].offset_months)} per month</small></h2><hr/>"
+    html += "<h2>Sailed #{distance.to_i}nm</h2> <h2>Spent #{format_money(expenses.to_i * -1)}</h2><hr/>"
 
     return " <c class='status'><w>#{html}</w></c>"
 
