@@ -2,6 +2,10 @@
 ~ NOTE : Hundred Rabbits
 ~ AUTH : Devine Lu Linvega & Rekka Bellum
 
+2017-07-13
+  TYPE : maintenance
+  NAME : Refilled propane
+
 2017-06-29
   TYPE : maintenance
   NAME : Changed 2 fuel filters
@@ -14,9 +18,19 @@
   TYPE : maintenance
   NAME : Changed oil
 
-2017-06-14
-  TYPE : maintenance
-  NAME : Emptied large propane
+2017-07-01
+  TYPE : sail
+  NAME : Rarotonga
+  VLUE : 534
+  POSI
+     -21.204798, -159.784932
+     -19.995515, -158.529013
+     -19.544965, -157.683280
+     -18.710888, -157.001448
+     -18.723878, -156.174143
+     -18.942838, -154.993288
+     -17.981163, -153.694932
+     -16.736012, -151.488605
 
 2017-06-05
   TYPE : sail
