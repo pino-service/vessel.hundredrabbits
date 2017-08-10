@@ -2,9 +2,6 @@
 ~ NOTE : Hundred Rabbits
 ~ AUTH : Devine Lu Linvega & Rekka Bellum
 
-
-
-
 2017-08-03
   TYPE : sail
   NAME : Vava'u (Tonga)
@@ -13,6 +10,11 @@
     -18.665240, -174.008847
     -18.564752, -172.495912
     -18.745552, -170.799168
+
+2017-07-31
+  TYPE : video
+  NAME : Capsule 5
+  LINK : https://youtu.be/6C1_2X74iXo
     
 2017-07-22
   TYPE : sail
@@ -26,6 +28,11 @@
     -20.572463, -163.509240
     -20.844795, -161.494413
     -21.204798, -159.784932
+
+2017-07-15
+  TYPE : press
+  NAME : ​Cook Island News
+  LINK : http://www.cookislandsnews.com/national/local/item/65279-digital-nomads-cross-the-pacific
 
 2017-07-13
   TYPE : maintenance
