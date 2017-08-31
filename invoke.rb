@@ -8,6 +8,8 @@ $nataniev.vessels[:hundredrabbits].install(:custom,:serve,CorpseHttp.new)
 
 corpse = $nataniev.vessels[:hundredrabbits].corpse
 
+p $nataniev.vessels[:hundredrabbits]
+
 def corpse.build
 
   @host = $nataniev.vessels[:hundredrabbits]
@@ -55,10 +57,12 @@ def corpse.body
     timeline_html += event.template
     count += 1
   end
-  timeline_html = " <c class='timeline'>#{timeline_html}</c>"
+  timeline_html = " <c class='timeline'><center></center>#{timeline_html}</c>"
+
+  html += Google_Map.new(@events).to_s
 
   html += "
-  #{Google_Map.new(events)}
+  
   <overlay>
     <div id='logo' style='width:120px;height:120px; margin:15vh auto; background:none'></div>
     <script type='text/javascript' charset='utf-8' src='public.hundredrabbits/scripts/drool.js'></script>
@@ -92,6 +96,8 @@ end
 class Media
   def path; return "#{$nataniev.path}/public/public.hundredrabbits/media" ; end
 end
+
+# Extras
 
 class ActionGet_location
 
@@ -129,5 +135,5 @@ class ActionGet_position
 
 end
 
-$nataniev.vessels[:hundredrabbits].install(:custom,:get_location,CorpseBase.new)
-$nataniev.vessels[:hundredrabbits].install(:custom,:get_position,CorpseBase.new)
+$nataniev.vessels[:hundredrabbits].install(:custom,:get_location)
+$nataniev.vessels[:hundredrabbits].install(:custom,:get_position)
