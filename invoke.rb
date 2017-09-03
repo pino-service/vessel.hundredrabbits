@@ -8,8 +8,6 @@ $nataniev.vessels[:hundredrabbits].install(:custom,:serve,CorpseHttp.new)
 
 corpse = $nataniev.vessels[:hundredrabbits].corpse
 
-p $nataniev.vessels[:hundredrabbits]
-
 def corpse.build
 
   @host = $nataniev.vessels[:hundredrabbits]
@@ -23,6 +21,9 @@ def corpse.build
   add_link("font.input_mono.css",:lobby)
   add_link("font.alte_haas.css",:lobby)
   add_link("style.main.css")
+
+  add_script("drool.js")
+  add_footer("<script>var logo = new Logo(false);logo.install(document.getElementById('logo'),120);</script>")
 
   @title = "Hundred Rabbits"
 
@@ -62,10 +63,8 @@ def corpse.body
   html += Google_Map.new(@events).to_s
 
   html += "
-  
   <overlay>
-    <div id='logo' style='width:120px;height:120px; margin:15vh auto; background:none'></div>
-    <script type='text/javascript' charset='utf-8' src='public.hundredrabbits/scripts/drool.js'></script>
+    <canvas id='logo' style='margin:10vh auto; display:block; width:300px; height:300px' width='600' height='600'></canvas>
     <c class='menu'>
       <a href='#map'>View Map</a> 
       <a href='https://hundredrabbits.itch.io' target='_blank'>Games</a> 
